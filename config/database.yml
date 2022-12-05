@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: Pinsly_production
-  username: Pinsly
-  password: <%= ENV["PINSLY_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
