@@ -1,0 +1,37 @@
+#signup-form > * {
+    display: flex;
+    flex-direction: column;
+} 
+#signup-form > button {
+    display: inline-block;
+    border: 0px;
+    border-radius: 20px;
+    background-color: #E60023;
+    color: white;
+    font-size: 15px;
+    width: 268px;
+    height: 40px;
+    padding: 11px 110px;
+    margin: 15px 0px 0px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#signnav-button{
+    background-color: #EFEFEF;
+    color: black;
+    width: 80.83px;
+    height: 40px;
+    border: 0px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+#signup-form > label {
+    padding: 5px;
+}
+#signup-form > label > input{
+    margin-top: 10px;
+}

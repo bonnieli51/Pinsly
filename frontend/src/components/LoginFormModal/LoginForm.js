@@ -53,8 +53,15 @@ function LoginForm() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button id="login-button" type="submit">Log In</button>
+        <h2>OR</h2>
       </form>
+      <button 
+        id="demo-button" 
+        type="submit"
+        onClick={()=> dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))} >
+        Log In as Demo User
+        </button>
     </>
   );
 }
