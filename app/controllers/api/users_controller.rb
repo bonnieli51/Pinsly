@@ -1,33 +1,20 @@
-class Api::SessionsController < ApplicationController
-    def show
-      # banana
-      if current_user
-        @user = current_user
-        # render template: 'api/users/show'
-        # render json: { user: @user }
-        render 'api/users/show'
-      else
-        render json: { user: nil }
-      end
-    end
-  
-    def create
-      @user = User.find_by_credentials(params[:credential], params[:password])
-      if @user
-        login!(@user)
-        # render template: 'api/users/show'
-        # render json: { user: @user }
-        render 'api/users/show'
-      else
-        render json: { errors: ['The provided credentials were invalid.'] }, status: :unauthorized
-      end
-    end
-  
-    def destroy
-      return unless current_user
-  
-      logout!
-      render json: { message: 'successs' }
+class Api::UsersController < ApplicationController
+  wrap_parameters include: User.attribute_names + ['password']
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      login!(@user)
+
+      render :show
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
-  
+
+  private
+
+  def user_params
+    params.require(:user).permit(:email, :username, :password)
+  end
+end
