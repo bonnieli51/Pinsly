@@ -20,6 +20,7 @@ ApplicationRecord.transaction do
     User.create!(
       username: 'Demo-lition', 
       email: 'demo@user.io', 
+      age: 20,
       password: 'password'
     )
   
@@ -28,6 +29,7 @@ ApplicationRecord.transaction do
       User.create!({
         username: Faker::Internet.unique.username(specifier: 3),
         email: Faker::Internet.unique.email,
+        age: rand(13..60),
         password: 'password'
       }) 
     end

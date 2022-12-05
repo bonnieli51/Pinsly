@@ -8,30 +8,27 @@ function SignupForm() {
     const [email, setEmail] = useState("");
     // const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    // const [confirmPassword, setConfirmPassword] = useState("");
+    const [age, setAge] = useState("");
     const [errors, setErrors] = useState([]);
-    console.log(errors)
-    
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // if (password === confirmPassword) {
-            // setErrors([]);
+  
         let username = email.split("@")[0];
-            return dispatch(sessionActions.signup({ email, username, password }))
-                .catch(async (res) => {
-                    let data;
-                    try {
-                        // .clone() essentially allows you to read the response body twice
-                        data = await res.clone().json();
-                    } catch {
-                        data = await res.text(); // Will hit this case if the server is down
-                    }
-                    if (data?.errors) setErrors(data.errors);
-                    else if (data) setErrors([data]);
-                    else setErrors([res.statusText]);
-                });
-        // }
-        // return setErrors(['Confirm Password field must be the same as the Password field']);
+      
+        return dispatch(sessionActions.signup({ email, username, password, age}))
+        .catch(async (res) => {
+            let data;
+            try {
+                // .clone() essentially allows you to read the response body twice
+                data = await res.clone().json();
+            } catch {
+                data = await res.text(); // Will hit this case if the server is down
+            }
+            if (data?.errors) setErrors(data.errors);
+            else if (data) setErrors([data]);
+            else setErrors([res.statusText]);
+        });
     };
 
     return (
@@ -80,15 +77,21 @@ function SignupForm() {
                     if (error.includes('password')) return <li key={error}>{error.split(" ").slice(1).join(" ")}</li>
                 })}
             </ul>
-            {/* <label>
-                Confirm Password
+            <label>
+                Age
                 <input
-                    type="password"
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
+                    placeholder="Age"
+                    type="age"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value ? parseInt(e.target.value): "")}
                     required
                 />
-            </label> */}
+            </label> 
+            <ul>
+                {errors.map(error => {
+                    if (error.includes('Sorry')) return <li key={error}>{error.split(" ").slice(1).join(" ")}</li>
+                })}
+            </ul>
             <button type="submit">Continue</button>
         </form>
     );

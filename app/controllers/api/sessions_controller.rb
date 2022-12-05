@@ -1,7 +1,6 @@
 class Api::SessionsController < ApplicationController
 
 def show
-    # banana
     if current_user
       @user = current_user
       # render template: 'api/users/show'
@@ -21,7 +20,11 @@ def show
       # render json: { user: @user }
       render 'api/users/show'
     else
-      render json: { errors: ['The provided credentials were invalid.'] }, status: :unauthorized
+      if User.find_by(email: params[:credential])
+        render json: { errors: ["The password you entered is incorrect. Try again"] }, status: :unauthorized
+      else
+        render json: { errors: ["Hmm...that doesn't look like an email address."] }, status: :unauthorized
+      end
     end
   end
 
@@ -29,6 +32,6 @@ def show
     return unless current_user
 
     logout!
-    render json: { message: 'successs' }
+    render json: { message: 'success' }
   end
 end

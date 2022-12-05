@@ -24,12 +24,17 @@ function Navigation(){
   }
 
   return (
-    <ul>
-      <li>
-        <NavLink exact to="/">Home</NavLink>
-        {sessionLinks}
-      </li>
-    </ul>
+    <div className='navbar'>
+      <ul>
+        <li>
+          <NavLink exact to="/">Home</NavLink>
+          <a href='#'>About</a>
+          <a href='#'>Business</a>
+          <a href='#'>Blog</a>
+          {sessionLinks}
+        </li>
+      </ul>
+    </div>
   );
 }
 

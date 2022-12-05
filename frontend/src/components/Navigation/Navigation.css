@@ -3,3 +3,7 @@
     width: 25px;
 }
 
+.nav-bar:first-child{
+    margin-left: 0;
+}
+

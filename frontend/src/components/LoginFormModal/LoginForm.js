@@ -30,9 +30,6 @@ function LoginForm() {
     <>
       <form id="login-form" onSubmit={handleSubmit}>
         <h1> Welcome to Pinsly </h1>
-        <ul>
-          {errors.map(error => <li key={error}>{error}</li>)}
-        </ul>
         <label>
           Email
           <input
@@ -43,6 +40,11 @@ function LoginForm() {
             required
           />
         </label>
+        <ul>
+          {errors.map(error => {
+            if (error.includes('email')) return <li key={error}>{error}</li>
+          })}
+        </ul>
         <label>
           Password
           <input
@@ -53,6 +55,11 @@ function LoginForm() {
             required
           />
         </label>
+        <ul>
+          {errors.map(error => {
+            if (error.includes('password')) return <li key={error}>{error}</li>
+          })}
+        </ul>
         <button id="login-button" type="submit">Log In</button>
         <h2>OR</h2>
       </form>

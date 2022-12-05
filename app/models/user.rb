@@ -7,8 +7,10 @@ class User < ApplicationRecord
     format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
   validates :email, 
     uniqueness: true, 
-    length: { in: 3..255 }, 
+    length: { in: 3..255, message: "Hmm...that doesn't look like an email address" }, 
     format: { with: URI::MailTo::EMAIL_REGEXP, message: "Hmm...that doesn't look like an email address" }
+  validates :age, 
+    numericality: {in:13..110, message: "Sorry, you’re not eligible to sign up for Pinsly right now" }
   validates :session_token, presence: true, uniqueness: true
   validates :password, length: { in: 6..255, message: "Your password is too short! You need 6+ characters." }, allow_nil: true
 
