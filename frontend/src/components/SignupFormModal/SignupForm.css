@@ -35,3 +35,8 @@
 #signup-form > label > input{
     margin-top: 10px;
 }
+
+#signup-form > ul {
+    color: #CC0000;
+    font-size: 12px;
+}

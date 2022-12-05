@@ -14,6 +14,7 @@ def show
 
   def create
     @user = User.find_by_credentials(params[:credential], params[:password])
+    
     if @user
       login!(@user)
       # render template: 'api/users/show'

@@ -59,7 +59,7 @@ function LoginForm() {
       <button 
         id="demo-button" 
         type="submit"
-        onClick={()=> dispatch(sessionActions.login({ credential: 'Demo-lition', password: 'password' }))} >
+        onClick={()=> dispatch(sessionActions.login({ credential: 'demo@user.io', password: 'password' }))} >
         Log In as Demo User
         </button>
     </>

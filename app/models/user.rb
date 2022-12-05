@@ -4,18 +4,17 @@ class User < ApplicationRecord
 
   validates :username, 
     uniqueness: true, 
-    length: { in: 3..30 }, 
     format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }
   validates :email, 
     uniqueness: true, 
     length: { in: 3..255 }, 
-    format: { with: URI::MailTo::EMAIL_REGEXP }
+    format: { with: URI::MailTo::EMAIL_REGEXP, message: "Hmm...that doesn't look like an email address" }
   validates :session_token, presence: true, uniqueness: true
-  validates :password, length: { in: 6..255 }, allow_nil: true
+  validates :password, length: { in: 6..255, message: "Your password is too short! You need 6+ characters." }, allow_nil: true
 
   def self.find_by_credentials(credential, password)
-    user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
-    
+    # user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
+    user = User.find_by(email: credential)
     return nil if user.nil?
 
     user.authenticate(password) ? user : nil
