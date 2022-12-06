@@ -24,7 +24,6 @@ function Navigation(){
         <div id='navbar-right'>
             <i id="search-icon" class="fa-solid fa-magnifying-glass"/> 
             <input id='search-bar' type="text" placeholder="Search"/>
-           
           <button 
             className="Right-Login-Navbar-buttons">
             <span class="tooltiptext">Notifications</span>
@@ -46,7 +45,7 @@ function Navigation(){
     );
   } else {
     sessionLinks = (<>   
-      <NavLink className="Home" exact to="/">Logo</NavLink>  
+      <NavLink id="signuplogo" className="Home" exact to="/">Pinsly</NavLink>  
       <ul id='navbar-right'>
         <li><a href='#'>About</a></li>
         <li><a href='#'>Business</a></li>

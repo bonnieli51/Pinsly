@@ -1,36 +1,3 @@
-#dropdown-button {
-  border-radius: 100%;
-  width: 24px;
-  height: 24px;
-  border: 0px;
-  margin-right: 20px;
-} 
-#dropdown-button:hover {
-    background-color: #e5e2e2;
-} 
-
-.dropdown-menu{
-    z-index: 10;
-    position:absolute;
-    top: 100px;
-    right: 10px;
-    background-color: white;
-    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 20%);
-    width: 360px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-
-}
-.dropdown-menu > *{
-    padding: 8px;
-}
-#dropdown-personal-info{
-    font-size: 16px;
-}
-.dropdown-menu .dropmenusmallfont{
-    font-size:12px;
-}
 
 #profile-button{
     color:black;
@@ -105,18 +72,7 @@
     font-size: 12px;
 }
 
-#dropdown-button {
-    border-radius: 100%;
-    width: 24px;
-    height: 24px;
-    border: 0px;
-}
 
-#dropdown-button i{
-    position: relative;
-    right: 11px;
-    font-size: 13px;
-}
 /* ALL NAVBARS */
 #navbar{
     display: flex;
@@ -165,7 +121,11 @@
     width: 44px;
     border-radius: 100%;
     background-color: transparent;
-    
+    margin-left: 16px;
+}
+#logo i {
+    position: relative;
+    right: -10px;
 }
 #logo:hover {
     background-color: #e5e2e2;
@@ -189,11 +149,102 @@
   margin-right: 16px;
 }
 
-#navbar :first-child{
-    margin-left: 10px;
-  }
-  
+
 #navbar li a:hover{
     text-decoration: underline;
 }
 
+/* DropDown menu */
+
+
+#dropdown-button i{
+    font-size: 13px;
+}
+#dropdown-button {
+    border-radius: 100%;
+    width: 24px;
+    height: 24px;
+    border: 0px;
+    margin-right: 20px;
+  } 
+
+#dropdown-button:hover {
+    background-color: #e5e2e2;
+} 
+
+#dropdown-personal-info{
+    display: flex;
+    gap: 10px;
+}
+#dm-personal-info-initial {
+    background-color: #e5e2e2;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    font-size: 30px;
+    margin-top: 3px;
+}
+
+#dm-personal-info-text :first-child{
+    font-weight:bold ;
+    padding-bottom: 5px;
+}
+
+#dm-personal-info-text :not(:first-child){
+    color:grey;
+}
+#dm-personal-info-text > *{
+    padding: 2px;
+}
+
+#dropdown-personal-info:hover{
+    background-color:#e5e2e2;
+}
+.dropdown-menu{
+    z-index: 10;
+    position:absolute;
+    top: 100px;
+    right: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 20%);
+    width: 360px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 210px;
+}
+.dropdown-menu > *{
+    padding: 8px;
+
+}
+.dropdown-menu :nth-child(3){
+    margin-top: 3px;
+}
+#dropdown-personal-info{
+    font-size: 16px;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.dropdown-menu .dropmenusmallfont{
+    font-size:12px;
+    margin-top: 10px;
+}
+
+#logout-button{
+    background-color: transparent;
+    border: 0px;
+    width: 340px;
+    font-size: 16px;
+    border-radius: 15px;
+    text-align: left;
+    height: 25px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+#logout-button:hover{
+    background-color: #e5e2e2;
+}

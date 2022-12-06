@@ -38,22 +38,21 @@ function ProfileButton({ user }) {
       {showMenu && (
         <ul className="dropdown-menu">
           <li className="dropmenusmallfont">Currently In</li>
-          <li>
-            <div id="dropdown-personal-info">
-              <div>{user.username[0]}</div>
+          <li id="dropdown-personal-info">
+            <div id='dm-personal-info-initial'>{user.username[0]}</div>
+            <div id='dm-personal-info-text'>
               <div>{user.username}</div>
               <div>Personal</div>
               <div>{user.email}</div> 
             </div>
           </li>
           <li className="dropmenusmallfont">More options</li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
+          <li> <button id="logout-button" onClick={logout}>Log Out</button> </li>
         </ul>
       )}
     </>
   );
 }
+
 
 export default ProfileButton;

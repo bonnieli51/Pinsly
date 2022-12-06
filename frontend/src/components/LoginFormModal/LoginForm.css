@@ -1,8 +1,6 @@
 #login-form > * {
     display: flex;
     flex-direction: column;
-    font-family: Segoe UI;
-
 } 
 
 #login-form input {
