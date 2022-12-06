@@ -63,6 +63,11 @@
     cursor: pointer;
     font-size: 100%;
     font-weight: bold;
+    cursor: pointer;
+}
+
+#lognav-button:hover{
+    background-color: #bd001c;
 }
 
 #login-form h2{

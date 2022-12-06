@@ -89,7 +89,7 @@ function SignupForm() {
             </label> 
             <ul>
                 {errors.map(error => {
-                    if (error.includes('Sorry')) return <li key={error}>{error.split(" ").slice(1).join(" ")}</li>
+                    if (error.includes('Sorry')) return  <li  key={error}>{error.split(" ").slice(1).join(" ")}</li>
                 })}
             </ul>
             <button type="submit">Continue</button>

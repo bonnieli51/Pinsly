@@ -32,14 +32,14 @@ function ProfileButton({ user }) {
 
   return (
     <>
-      <button id="prof-button" onClick={openMenu}>
-        <i className="fa-solid fa-user-circle" />
+      <button className="Right-Login-Navbar-buttons"id="dropdown-button" onClick={openMenu}>
+        <i class="fa-solid fa-chevron-down"></i>
+        <span class="tooltiptext">Account and more options</span>
       </button>
       {showMenu && (
-        <ul className="profile-dropdown">
+        <ul className="dropdown-menu">
           <li>{user.username}</li>
           <li>{user.email}</li>
-          <li>{user.age}</li>
           <li>
             <button onClick={logout}>Log Out</button>
           </li>

@@ -27,6 +27,11 @@
     cursor: pointer;
     font-size: 100%;
     font-weight: bold;
+    cursor: pointer;
+}
+
+#signnav-button:hover{
+    background-color: #e5e2e2;
 }
 
 #signup-form > label {
