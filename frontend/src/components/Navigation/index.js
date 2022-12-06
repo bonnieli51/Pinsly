@@ -12,28 +12,41 @@ function Navigation(){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <div id='navbar-right'>
-        <input id='search-bar' type="text" placeholder="Search"/>
-        <button 
-          className="Right-Login-Navbar-buttons">
-          <span class="tooltiptext">Notifications</span>
-          <i class="fa-solid fa-bell"/>
+      <>
+        <div id='navbar-left'>     
+          <NavLink id="logo" exact to="/">
+            <i class="fa-brands fa-pinterest"></i>
+          </NavLink>   
+          <NavLink className="NavLinkText" exact to="/">Home</NavLink>
+          <a href='#' className="NavLinkText" >Today</a> 
+          <a href='#' className="NavLinkText" >Create</a>  
+        </div>
+        <div id='navbar-right'>
+            <i id="search-icon" class="fa-solid fa-magnifying-glass"/> 
+            <input id='search-bar' type="text" placeholder="Search"/>
+           
+          <button 
+            className="Right-Login-Navbar-buttons">
+            <span class="tooltiptext">Notifications</span>
+            <i class="fa-solid fa-bell"/>
+            </button>
+          <button className="Right-Login-Navbar-buttons">
+            <span class="tooltiptext">Messages</span>
+            <i class="fa-solid fa-comment-dots"></i>
           </button>
-        <button className="Right-Login-Navbar-buttons">
-          <span class="tooltiptext">Messages</span>
-          <i class="fa-solid fa-message"></i>
-        </button>
-        <button 
-          className="Right-Login-Navbar-buttons" 
-          id="profile-button"> 
-          <span class="tooltiptext">Your Profile</span>
-          {sessionUser.username[0].toUpperCase()}
-        </button>
-        <ProfileButton user={sessionUser} />
-      </div>
+          <button 
+            className="Right-Login-Navbar-buttons" 
+            id="profile-button"> 
+            <span class="tooltiptext">Your Profile</span>
+            {sessionUser.username[0].toUpperCase()}
+          </button>
+          <ProfileButton user={sessionUser} />
+        </div>
+      </>
     );
   } else {
-    sessionLinks = (
+    sessionLinks = (<>   
+      <NavLink className="Home" exact to="/">Logo</NavLink>  
       <ul id='navbar-right'>
         <li><a href='#'>About</a></li>
         <li><a href='#'>Business</a></li>
@@ -41,13 +54,15 @@ function Navigation(){
         <li><LoginFormModal /></li>
         <li><SignupFormModal /></li>
       </ul>
+
+      </>
+
     );
   }
 
   return (
     <>
       <div id='navbar'>
-        <NavLink className="Home" exact to="/">Home</NavLink>
         {sessionLinks}
       </div>
     </>

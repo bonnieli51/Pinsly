@@ -6,7 +6,6 @@ import './SignupForm.css';
 function SignupForm() {
     const dispatch = useDispatch();
     const [email, setEmail] = useState("");
-    // const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [age, setAge] = useState("");
     const [errors, setErrors] = useState([]);
@@ -20,10 +19,9 @@ function SignupForm() {
         .catch(async (res) => {
             let data;
             try {
-                // .clone() essentially allows you to read the response body twice
                 data = await res.clone().json();
             } catch {
-                data = await res.text(); // Will hit this case if the server is down
+                data = await res.text(); 
             }
             if (data?.errors) setErrors(data.errors);
             else if (data) setErrors([data]);

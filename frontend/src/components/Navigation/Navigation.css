@@ -17,16 +17,25 @@
     background-color: white;
     box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 20%);
     width: 360px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+.dropdown-menu > *{
+    padding: 8px;
+}
+#dropdown-personal-info{
+    font-size: 16px;
+}
+.dropdown-menu .dropmenusmallfont{
+    font-size:12px;
 }
 
 #profile-button{
     color:black;
-    height: 25px; 
-    width: 25px;
-}
-
-#profile-button:hover{
-    transform: scale(1.5);
+    height: 48px; 
+    width: 48px;
 }
 
 .Right-Login-Navbar-buttons{
@@ -46,8 +55,9 @@
     text-align: center;
     padding: 5px 0;
     border-radius: 6px;
+   
     
-    position: absolute;
+    position: fixed;
     display: inline;
     top:70px;
     text-align: center;
@@ -66,15 +76,30 @@
     font-size: 25px;
 }
 
+#search-icon {
+    position: relative;
+    left: 23px;
+    z-index: 1;
+    color:grey
+}
 #search-bar {
-    width: 60vw;
+    position: relative;
+    right: 30px;
+    width: 50vw;
     height: 48px;
     border-radius: 30px;
     background-color: #EFEFEF ;
     border: 0px;
     margin: 0 auto;
-
+    padding-left: 50px;
 }
+
+#search-bar:hover{
+    background-color: #e5e2e2; ;
+} 
+#search-bar:focus{
+    outline-color: #47a0f4 ;
+} 
 
 #profile-button {
     font-size: 12px;
@@ -89,7 +114,7 @@
 
 #dropdown-button i{
     position: relative;
-    right: 16px;
+    right: 11px;
     font-size: 13px;
 }
 /* ALL NAVBARS */
@@ -106,9 +131,50 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    gap:15px;
+    
    
 }
 
+#navbar-left {
+    display: flex;
+    flex-direction: row;
+    gap:15px;
+    justify-content: space-between;
+}
+
+#navbar-left > .NavLinkText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black; 
+    height: 48px;
+    min-width: 60px;
+    background-color: transparent;
+    border-radius: 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
+#logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color:red;
+    font-size: 24px;
+    width: 44px;
+    border-radius: 100%;
+    background-color: transparent;
+    
+}
+#logo:hover {
+    background-color: #e5e2e2;
+}
+#navbar-left > .NavLinkText:hover{
+    background-color: black;
+    color: white
+    
+}
 
 
 /* SIGN UP NAVBAR */
@@ -124,7 +190,7 @@
 }
 
 #navbar :first-child{
-    margin-left: 16px;
+    margin-left: 10px;
   }
   
 #navbar li a:hover{

@@ -7,7 +7,6 @@ function ProfileButton({ user }) {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   
-
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -38,8 +37,16 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <ul className="dropdown-menu">
-          <li>{user.username}</li>
-          <li>{user.email}</li>
+          <li className="dropmenusmallfont">Currently In</li>
+          <li>
+            <div id="dropdown-personal-info">
+              <div>{user.username[0]}</div>
+              <div>{user.username}</div>
+              <div>Personal</div>
+              <div>{user.email}</div> 
+            </div>
+          </li>
+          <li className="dropmenusmallfont">More options</li>
           <li>
             <button onClick={logout}>Log Out</button>
           </li>
