@@ -118,6 +118,7 @@
   border-radius: 100%;
   background-color: transparent;
   margin-left: 16px;
+  font-weight: bold;
 }
 #logo i {
   position: relative;

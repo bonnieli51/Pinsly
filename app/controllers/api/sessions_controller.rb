@@ -3,8 +3,6 @@ class Api::SessionsController < ApplicationController
 def show
     if current_user
       @user = current_user
-      # render template: 'api/users/show'
-      # render json: { user: @user }
       render 'api/users/show'
     else
       render json: { user: nil }
@@ -16,8 +14,6 @@ def show
     
     if @user
       login!(@user)
-      # render template: 'api/users/show'
-      # render json: { user: @user }
       render 'api/users/show'
     else
       if params[:credential].match?(URI::MailTo::EMAIL_REGEXP)

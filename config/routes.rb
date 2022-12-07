@@ -6,8 +6,11 @@ Rails.application.routes.draw do
   # post 'api/test', to: 'application#test'
 
   namespace :api, defaults: { format: :json } do
-    resources :users, only: :create
-    resource :session, only: [:show, :create, :destroy]
+    resource :session, only: [:show, :create, :destroy] 
+    resources :users, only: :create do 
+      resources :boards, only: [:index, :create, :destroy]
+    end
+    resources :board, only: [:show]
   end
   get '*path', to: "static_pages#frontend_index"
 end

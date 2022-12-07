@@ -54,9 +54,13 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-        <NavLink id="signuplogo" className="Home" exact to="/">
-          Pinsly
+       <NavLink id="logo" exact to="/">
+            <i class="fa-brands fa-pinterest"></i>
+            &nbsp;&nbsp;&nbsp;Pinsly
         </NavLink>
+        {/* <NavLink id="signuplogo" className="Home" exact to="/">
+          Pinsly
+        </NavLink> */}
         <ul id="navbar-right">
           <li>
             <a href="#">About</a>
