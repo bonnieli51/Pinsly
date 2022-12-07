@@ -9,7 +9,7 @@ function App() {
     <>
       <Navigation />
       <Switch>
-        <Route path={`/users/:username`}>
+        <Route path={`/:username`}>
           <UserShowPage/>
         </Route>
 

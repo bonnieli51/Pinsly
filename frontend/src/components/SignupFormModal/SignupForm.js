@@ -32,6 +32,7 @@ function SignupForm() {
 
   return (
     <form id="signup-form" onSubmit={handleSubmit}>
+      <div className="form-logo"><i class="fa-brands fa-pinterest"></i></div>
       <h1> Welcome to Pinsly </h1>
       <h3> Find new ideas to try </h3>
 

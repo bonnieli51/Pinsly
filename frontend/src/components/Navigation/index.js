@@ -9,10 +9,7 @@ import "./Navigation.css";
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
 
-  function handleProfileShow() {
-    
-  }
-
+  
 
   let sessionLinks;
   if (sessionUser) {
@@ -43,13 +40,13 @@ function Navigation() {
             <span class="tooltiptext">Messages</span>
             <i class="fa-solid fa-comment-dots"></i>
           </button>
-          <button
-            onClick={handleProfileShow}
+          <NavLink
+            to={`/${sessionUser.username}`}
             className="Right-Login-Navbar-buttons"   
             id="profile-button">
             <span class="tooltiptext">Your Profile</span>
             {sessionUser.username[0].toUpperCase()}
-          </button>
+          </NavLink>
           <ProfileButton user={sessionUser} />
         </div>
       </>

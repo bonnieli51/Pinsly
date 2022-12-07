@@ -20,9 +20,9 @@ def show
       # render json: { user: @user }
       render 'api/users/show'
     else
-      if User.find_by(email: params[:credential])
+      if params[:credential].match?(URI::MailTo::EMAIL_REGEXP)
         render json: { errors: ["The password you entered is incorrect. Try again"] }, status: :unauthorized
-      else
+      else 
         render json: { errors: ["Hmm...that doesn't look like an email address."] }, status: :unauthorized
       end
     end
@@ -33,5 +33,6 @@ def show
 
     logout!
     render json: { message: 'success' }
+    
   end
 end

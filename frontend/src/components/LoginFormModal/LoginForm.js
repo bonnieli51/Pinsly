@@ -30,6 +30,7 @@ function LoginForm() {
   return (
     <>
       <form id="login-form" onSubmit={handleSubmit}>
+        <div className="form-logo"><i class="fa-brands fa-pinterest"></i></div>
         <h1> Welcome to Pinsly </h1>
         <label>
           Email

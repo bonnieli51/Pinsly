@@ -2,6 +2,11 @@
   color: black;
   height: 48px;
   width: 48px;
+  font-size: 12px;
+  text-decoration: none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .Right-Login-Navbar-buttons {
@@ -64,10 +69,6 @@
 }
 #search-bar:focus {
   outline-color: #47a0f4;
-}
-
-#profile-button {
-  font-size: 12px;
 }
 
 /* ALL NAVBARS */

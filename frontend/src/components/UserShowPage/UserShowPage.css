@@ -1,0 +1,33 @@
+#usershowpage-personalinfo{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    align-items: center;
+}
+#usershowpage-initial{
+    width: 120px;
+    height: 120px; 
+    background-color: #eaeaea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#usershowpage-username{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#usershowpage-email{
+    color:grey;
+}
+
+#usershowpage-personalinfo button {
+    padding: 12px 16px;
+    border: 0px; 
+    border-radius: 24px;
+}
