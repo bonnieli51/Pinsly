@@ -41,7 +41,8 @@ function Navigation() {
             <i class="fa-solid fa-comment-dots"></i>
           </button>
           <NavLink
-            to={`/${sessionUser.username}`}
+            // to={`/${sessionUser.username}`}
+            to={`/${sessionUser.id}`}
             className="Right-Login-Navbar-buttons"   
             id="profile-button">
             <span class="tooltiptext">Your Profile</span>

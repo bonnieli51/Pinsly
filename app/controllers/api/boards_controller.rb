@@ -3,9 +3,7 @@ class Api::BoardsController < ApplicationController
     
 
     def index
-        #needs to refactor to shows all boards for specific user. Not all boards in DB
         @boards = Board.where(user_id: params[:user_id])
-        # render json: @boards
         render :index
     end
 
@@ -16,6 +14,8 @@ class Api::BoardsController < ApplicationController
 
     # def create
     #     @board = Board.new(board_params)
+    #     @board.user_id = current_user   
+    #   
     #     if @board.save
     #         render :show
     #     else 
@@ -24,12 +24,12 @@ class Api::BoardsController < ApplicationController
     # end
 
     def destroy
-
+    #user_id == ra
     end
 
     private
 
     def board_params
-        params.require(:board).permit(:name, :description, :user_id)
+        params.require(:board).permit(:name, :description)
     end
 end
