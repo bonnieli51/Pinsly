@@ -22,17 +22,19 @@ const receiveBoard = (board) => ({
 export const fetchBoard = (boardId) => async (dispatch) => {
   const response = await csrfFetch(`/api/boards/${boardId}`);
   const data = await response.json();
-  dispatch(receiveBoard(data));
+  dispatch(receiveBoard(data.board));
 };
 
-const boardReducer = (state = {}, action) =>{
+const boardsReducer = (state = {}, action) =>{
     const newState = {...state}
     switch (action.type) {
         case RECEIVE_BOARDS:
             return{...newState, ...action.boards };
         case RECEIVE_BOARD:
             return newState[action.board.id] = action.board
+        default:
+            return state
     }
 }
 
-export default boardReducer;
+export default boardsReducer;

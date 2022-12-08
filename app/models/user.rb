@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_secure_password
   before_validation :ensure_session_token
 
+  has_many :boards,  dependent: :destroy
+  
   validates :username, 
     uniqueness: true, 
     format: { without: URI::MailTo::EMAIL_REGEXP, message:  "can't be an email" }

@@ -8,9 +8,9 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     resource :session, only: [:show, :create, :destroy] 
     resources :users, only: :create do 
-      resources :boards, only: [:index, :create, :destroy]
+      resources :boards, only: [:index, :create, :destroy, :show]
     end
-    resources :board, only: [:show]
+    # resources :boards, only: [:show] 
   end
   get '*path', to: "static_pages#frontend_index"
 end

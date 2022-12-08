@@ -3,5 +3,5 @@ class Board < ApplicationRecord
     validates :name, uniqueness: { scope: :user_id,
     message: "Try a different name. You already have a board with this name!" }
 
-    belongs_to to :user
+    belongs_to :user
 end
