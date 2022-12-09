@@ -25,16 +25,17 @@ export const fetchBoard = (boardId) => async (dispatch) => {
   dispatch(receiveBoard(data.board));
 };
 
-const boardsReducer = (state = {}, action) =>{
-    const newState = {...state}
-    switch (action.type) {
-        case RECEIVE_BOARDS:
-            return{...newState, ...action.boards };
-        case RECEIVE_BOARD:
-            return newState[action.board.id] = action.board
-        default:
-            return state
-    }
-}
+const boardsReducer = (state = {}, action) => {
+  const newState = { ...state };
+  switch (action.type) {
+    case RECEIVE_BOARDS:
+      return { ...newState, ...action.boards };
+    case RECEIVE_BOARD:
+      newState[action.board.id] = action.board;
+      return newState;
+    default:
+      return state;
+  }
+};
 
 export default boardsReducer;

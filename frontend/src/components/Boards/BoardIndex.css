@@ -1,0 +1,24 @@
+#boards {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+
+}
+
+.board {
+  width: 252px;
+  height: 231px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  border: 1px solid black;
+  margin-top: 3px;
+}
+
+.board .board-images {
+    margin-top: 12px;
+    width:230px; 
+    height: 157px;
+    border: 1px solid black;
+    border-radius: 15px;
+}

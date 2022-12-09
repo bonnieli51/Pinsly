@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as boardsActions from "../../store/board";
 import BoardIndexItem from "./BoardIndexItem";
-import "./Board.css"
+import "./BoardIndex.css"
 
 function BoardIndex() {
   const dispatch = useDispatch();

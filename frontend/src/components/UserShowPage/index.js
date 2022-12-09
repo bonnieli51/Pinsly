@@ -9,6 +9,8 @@ function UserShowPage() {
   if (!sessionUser) {
     return <Redirect to="/"></Redirect>;
   }
+
+  
   return (
     <>
       <div id="usershowpage-personalinfo">
