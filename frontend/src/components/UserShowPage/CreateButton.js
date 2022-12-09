@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Modal } from "../../context/Modal";
 import NewBoardForm from "../Boards/NewBoardForm";
 
-
 function CreateButton() {
   const [showMenu, setShowMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -24,9 +23,6 @@ function CreateButton() {
     return () => document.removeEventListener("click", closeMenu);
   }, [showMenu]);
 
-  // const changeMenu =() =>{
-  //   showMenu ? setShowMenu(false) : setShowMenu(true);
-  // }
   return (
     <>
        

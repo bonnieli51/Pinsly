@@ -3,6 +3,7 @@ import csrfFetch from "./csrf";
 const RECEIVE_BOARDS = "RECEIVE_BOARDS";
 const RECEIVE_BOARD = "RECEIVE_BOARD";
 const ADD_BOARD = "ADD_BOARD";
+const REMOVE_BOARD = "REMOVE_BOARD";
 
 const receiveBoards = (boards) => ({
   type: RECEIVE_BOARDS,
@@ -32,7 +33,7 @@ const addBoard = (board) => ({
 });
 
 export const createBoard = (board) => async (dispatch) => {
-  const { name, description} = board;
+  const { name, description } = board;
   const response = await csrfFetch(`/api/boards/`, {
     method: "POST",
     header: { "Content-Type": "/application/json" },
@@ -45,6 +46,19 @@ export const createBoard = (board) => async (dispatch) => {
   dispatch(addBoard(data.board));
 };
 
+const removeBoard = (boardId) => ({
+  type: REMOVE_BOARD,
+  boardId,
+});
+
+export const deleteBoard = (boardId) => async (dispatch) => {
+  const response = await csrfFetch(`/api/boards/${boardId}`, {
+    method: "DELETE",
+  });
+  dispatch(removeBoard(boardId));
+  return boardId;
+};
+
 const boardsReducer = (state = {}, action) => {
   const newState = { ...state };
   switch (action.type) {
@@ -55,6 +69,9 @@ const boardsReducer = (state = {}, action) => {
       return newState;
     case ADD_BOARD:
       newState[action.board.id] = action.board;
+      return newState;
+    case REMOVE_BOARD:
+      delete newState[action.boardId];
       return newState;
     default:
       return state;

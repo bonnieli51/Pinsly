@@ -41,7 +41,7 @@ function NewBoardForm() {
       </label>
       <ul>
         {errors.map((error) => {
-          if (error.includes("board")) return <li key={error}>{error}</li>;
+          if (error.includes("board")) return <li key={error}>{error.split(" ").slice(1).join(" ")}</li>;
         })}
       </ul>
       <label>

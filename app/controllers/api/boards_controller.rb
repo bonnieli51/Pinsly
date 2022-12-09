@@ -1,5 +1,5 @@
 class Api::BoardsController < ApplicationController
-    # before_action :require_logged_in
+    before_action :require_logged_in
 
 
     def index
@@ -15,7 +15,6 @@ class Api::BoardsController < ApplicationController
     def create
         @board = Board.new(board_params)
         @board.user_id = current_user.id 
-        #   @board.user_id = User.first.id
       
         if @board.save
             render :show
@@ -25,7 +24,12 @@ class Api::BoardsController < ApplicationController
     end
 
     def destroy
-    #user_id == ra
+        @board = Board.find(params[:id])
+        if @board.user_id == current_user.id
+            @board.destroy
+        else 
+            render json: {message: "Unauthorized"}, status: :unauthorized
+        end
     end
 
     private

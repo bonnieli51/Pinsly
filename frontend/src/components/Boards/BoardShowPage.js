@@ -12,11 +12,15 @@ function BoardShowPage() {
     dispatch(boardsActions.fetchBoard(boardId));
   }, [boardId]);
 
+
   return (
     <>
       <div>
         <div>{board.name}</div>
         <div>{board.description}</div>
+        <button onClick={() => dispatch(boardsActions.deleteBoard(boardId))}>
+          Delete Board
+        </button>
       </div>
     </>
   );

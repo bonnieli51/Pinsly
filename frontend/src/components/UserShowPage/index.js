@@ -2,7 +2,6 @@ import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import BoardIndex from "../Boards/BoardIndex";
 import CreateButton from "./CreateButton";
-import NewBoardFormModal from "../Boards/index"
 import "./UserShowPage.css";
 
 function UserShowPage() {
@@ -24,7 +23,6 @@ function UserShowPage() {
         <button>Edit Profile</button>  
       </div>
       <CreateButton />
-      {/* <NewBoardFormModal/> */}
       <BoardIndex/>
     </>
   );
