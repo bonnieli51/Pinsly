@@ -32,6 +32,6 @@
     border-radius: 24px;
 }
 
-/* #create-menu {
-    pointer-events: none
-} */
+#CreateBoardModal{
+   height: 300px;
+}

@@ -19,16 +19,26 @@ class Api::BoardsController < ApplicationController
         if @board.save
             render :show
         else 
-            render json: {errors: @board.errors.full_messages}, status:  :unprocessable_entity
+            render json: {errors: @board.errors.full_messages}, status: :unprocessable_entity
         end
     end
 
     def destroy
         @board = Board.find(params[:id])
-        if @board.user_id == current_user.id
+        if @board && @board.user_id == current_user.id
             @board.destroy
+            rebder json: {message: "Board deleted!"}
         else 
             render json: {message: "Unauthorized"}, status: :unauthorized
+        end
+    end
+
+    def update
+        @board = Board.find(params[:id])
+        if @board.update(board_params)
+            render :show
+        else
+            render json: @board.errors.full_messages
         end
     end
 

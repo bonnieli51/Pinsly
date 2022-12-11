@@ -9,7 +9,6 @@ function CreateButton() {
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
-    
   };
 
   useEffect(() => {
@@ -27,7 +26,7 @@ function CreateButton() {
     <>
        
      {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
+        <Modal id="CreateBoardModal" onClose={() => setShowModal(false)}>
           <NewBoardForm />
         </Modal>
       
