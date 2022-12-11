@@ -47,7 +47,7 @@ function EditBoardModal(props) {
           <input 
           type="textarea"
           value={description}
-          placeholder= {description}
+          placeholder= {description ? description :"What's your board about?"}
           onChange={(e)=> setDescription(e.target.value)}
           ></input>
         </label>

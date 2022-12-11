@@ -11,7 +11,7 @@ function LoginFormModal() {
         Log In
       </button>
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
+        <Modal className="Log-Sign-Modal" onClose={() => setShowModal(false)}>
           <LoginForm />
         </Modal>
       )}

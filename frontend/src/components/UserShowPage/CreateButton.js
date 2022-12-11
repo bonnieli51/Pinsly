@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "../../context/Modal";
-import NewBoardForm from "../Boards/NewBoardForm";
+import NewBoardForm from "../Boards/NewBoardModal";
 
 function CreateButton() {
   const [showMenu, setShowMenu] = useState(false);
@@ -25,11 +25,8 @@ function CreateButton() {
   return (
     <>
        
-     {showModal && (
-        <Modal id="CreateBoardModal" onClose={() => setShowModal(false)}>
-          <NewBoardForm />
-        </Modal>
-      
+     {showModal && (   
+          <NewBoardForm setShowModal={setShowModal}/>
       )}
       <button onClick={openMenu}>
         <i class="fa-solid fa-plus"></i>

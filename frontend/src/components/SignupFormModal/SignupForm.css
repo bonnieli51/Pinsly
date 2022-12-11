@@ -1,7 +1,7 @@
 .form-logo {
-    color:red;
-    font-size: 40px;
-    margin-top: 45px;
+  color: red;
+  font-size: 40px;
+  margin-top: 45px;
 }
 #signup-form > * {
   display: flex;
@@ -65,5 +65,6 @@
 }
 
 #signup-form h2 {
-  padding: 13px; 
+  padding: 13px;
 }
+

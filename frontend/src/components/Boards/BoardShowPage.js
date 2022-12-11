@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as boardsActions from "../../store/board";
-// import DeleteBoardModal from "./DeleteBoardModalDeleteBoardModal";
 import DropDownMenu from "./DropDownMenu";
 
 function BoardShowPage() {
