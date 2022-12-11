@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import DeleteBoardModal from "./DeleteBoardModal";
+import EditBoardModal from "./EditBoard/EditBoardModal";
 
 function DropDownMenu() {
   const [showMenu, setShowMenu] = useState(false);
   const [showDeleteBoardModal, setShowDeleteBoardModal] = useState(false);
+  const [showEditBoardModal, setShowEditBoardModal] = useState(false);
 
   const openMenu = () => {
     if (showMenu) return;
@@ -26,15 +28,26 @@ function DropDownMenu() {
       {showDeleteBoardModal && (
         <DeleteBoardModal setShowDeleteBoardModal={setShowDeleteBoardModal} />
       )}
+
+      {showEditBoardModal && (
+        <EditBoardModal setShowEditBoardModal={setShowEditBoardModal} />
+      )}
       <button onClick={openMenu}>
         <i class="fa-solid fa-ellipsis"></i>
       </button>
 
       {showMenu && (
-        <div id="create-menu">
-          <div>Edit</div>
-          <div id="create-button" onClick={() => setShowDeleteBoardModal(true)}>
+        <div id="board-options">
+          <div> Board Options</div>
+          <div onClick={() => setShowEditBoardModal(true)}>
+            Edit Board
+          </div>
+          <div onClick={() => setShowDeleteBoardModal(true)}>
             Delete Board
+            {/* <div className="EditModal-smallfonts">
+              Delete this board and all its Pins forever.
+            </div>
+            <div className="EditModal-smallfonts">You can't undo this!</div> */}
           </div>
         </div>
       )}

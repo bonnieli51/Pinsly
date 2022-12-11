@@ -14,7 +14,7 @@ function DeleteBoardModal(props) {
     e.preventDefault();
     dispatch(boardsActions.deleteBoard(boardId));
     setShowDeleteBoardModal(false);
-    history.replace(`/users/${userId}`);
+    history.replace(`/${userId}`);
   };
 
   return (

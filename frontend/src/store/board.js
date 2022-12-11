@@ -59,6 +59,20 @@ export const deleteBoard = (boardId) => async (dispatch) => {
   return boardId;
 };
 
+export const updateBoard = (board) => async (dispatch) => {
+  const { name, description } = board;
+  const response = await csrfFetch(`/api/boards/${board.id}`, {
+    method: "PATCH",
+    header: { "Content-Type": "/application/json" },
+    body: JSON.stringify({
+      name,
+      description,
+    }),
+  });
+  const data = await response.json();
+  dispatch(receiveBoard(data.board));
+};
+
 const boardsReducer = (state = {}, action) => {
   const newState = { ...state };
   switch (action.type) {
