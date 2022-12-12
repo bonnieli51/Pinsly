@@ -3,6 +3,7 @@ class User < ApplicationRecord
   before_validation :ensure_session_token
 
   has_many :boards,  dependent: :destroy
+  has_many :pins, dependent: :destroy
   
   validates :username, 
     uniqueness: true, 

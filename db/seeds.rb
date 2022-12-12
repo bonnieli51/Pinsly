@@ -1,41 +1,37 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
 
-ApplicationRecord.transaction do 
-  puts "Destroying tables..."
-  # Unnecessary if using `rails db:seed:replant`
+
+  require "open-uri"
+ 
   User.destroy_all
+  Board.destroy_all
 
-  puts "Resetting primary keys..."
-  # For easy testing, so that after seeding, the first `User` has `id` of 1
-  ApplicationRecord.connection.reset_pk_sequence!('users')
-
-  puts "Creating users..."
-  # Create one user with an easy to remember username, email, and password:
-  User.create!(
+  demo_user = User.create!(
     username: 'Demo-lition', 
     email: 'demo@user.io', 
     age: 20,
     password: 'password'
   )
-
   
-  Board.create!(
+  board_1 = Board.create!(
     name: "Cats",
     description: "MeowMeow",
-    user_id: 1
+    user_id: demo_user.id
   )
 
-  Board.create!(
+  board_2 = Board.create!(
     name: "Dogs",
     description: "WoofWoof",
-    user_id: 1
+    user_id: demo_user.id
   )
 
+  pin_1 = Pin.create!(
+    title:"Cat",
+    description:"Cat trying to touch its legs",
+    user_id: demo_user.id,
+    board_id: board_1.id
+  )
+  image_1 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/cat.jpeg")
+  pin_1.images.attach(io: image_1, filename:"cat.jpeg")
+  pin_1.save!
+
   puts "Done!"
-end
