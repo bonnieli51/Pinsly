@@ -13,6 +13,8 @@
   justify-items: center;
   border: 1px solid black;
   margin-top: 3px;
+  text-decoration: none;
+  color: black;
 }
 
 .board .board-images {
@@ -21,4 +23,13 @@
     height: 157px;
     border: 1px solid black;
     border-radius: 15px;
+}
+
+.board .board-name{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.board-div > *{
+  padding: 2px
 }

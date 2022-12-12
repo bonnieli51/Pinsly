@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import BoardIndex from "../Boards/BoardIndex";
@@ -11,6 +12,7 @@ function UserShowPage() {
     return <Redirect to="/"></Redirect>;
   }
 
+  
   
   return (
     <>

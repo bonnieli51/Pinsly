@@ -31,7 +31,7 @@ const pinsReducer = (state={}, action) => {
     const newState = { ...state };
     switch (action.type) {
         case RECEIVE_PINS:
-            return { ...newState, ...action.pins };
+            return { ...action.pins };
         case RECEIVE_PIN:
             newState[action.pin.id] = action.pin;
             return newState;

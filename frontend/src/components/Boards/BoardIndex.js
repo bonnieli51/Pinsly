@@ -13,7 +13,7 @@ function BoardIndex() {
 
   useEffect(() => {
     dispatch(boardsActions.fetchBoards(userId));
-  }, []);
+  }, [dispatch, userId]);
 
   return (
     <>

@@ -1,0 +1,62 @@
+
+
+#board-show-first-line{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+
+#board-name-showpg{
+    font-size: 36px;
+    font-weight: bold;
+}
+#board-show-pg-drop-button {
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+    border: 0px;
+}
+
+#board-show-pg-drop-button:hover {
+    background-color:  #e5e2e2;
+} 
+
+#board-description-showpg {
+    font-size: 16px;
+    text-align: center;
+    padding: 15px;
+}
+
+/* drop down menu */
+#board-options{
+    height: 130px;
+    width: 185px; 
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 20%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    position: absolute;
+    background-color: white;
+    top: 150px;
+}
+
+#board-options > *{
+    padding: 10px;
+}
+
+#board-options .board-options-button{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#board-options .board-options-button:hover{
+    background-color:  #e5e2e2;
+}
+
+#board-options-smallfont{
+    font-size: 12px;
+}

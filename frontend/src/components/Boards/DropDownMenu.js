@@ -32,17 +32,17 @@ function DropDownMenu() {
       {showEditBoardModal && (
         <EditBoardModal setShowEditBoardModal={setShowEditBoardModal} />
       )}
-      <button onClick={openMenu}>
+      <button id="board-show-pg-drop-button" onClick={openMenu}>
         <i class="fa-solid fa-ellipsis"></i>
       </button>
 
       {showMenu && (
         <div id="board-options">
-          <div> Board Options</div>
-          <div onClick={() => setShowEditBoardModal(true)}>
+          <div id="board-options-smallfont"> Board Options</div>
+          <div className="board-options-button" onClick={() => setShowEditBoardModal(true)}>
             Edit Board
           </div>
-          <div onClick={() => setShowDeleteBoardModal(true)}>
+          <div className="board-options-button" onClick={() => setShowDeleteBoardModal(true)}>
             Delete Board
             {/* <div className="EditModal-smallfonts">
               Delete this board and all its Pins forever.

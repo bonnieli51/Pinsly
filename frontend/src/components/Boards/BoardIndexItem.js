@@ -12,7 +12,7 @@ function BoardIndexItem({ board }) {
     <Link 
     to={`/users/${userId}/boards/${board.id}`}
     className="board">
-      <div className="boardsd">
+      <div className="board-div">
         <div className="board-images">Image</div>
         <div className="board-name">{board.name}</div>
         <div className="num-pins-board"># Pins</div>

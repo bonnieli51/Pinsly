@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import * as boardsActions from "../../store/board";
 import DropDownMenu from "./DropDownMenu";
 import PinIndex from "../Pins/PinIndex/PinIndex";
+import "./BoardShowPage.css";
 
 function BoardShowPage() {
   const dispatch = useDispatch();
@@ -12,20 +13,18 @@ function BoardShowPage() {
     boards[boardId] ? boards[boardId] : {}
   );
 
-
   useEffect(() => {
     dispatch(boardsActions.fetchBoard(boardId));
-  }, [boardId]);
-
+  }, [dispatch, boardId]);
 
   return (
     <>
-      <div>
-        <div>{board.name}</div>
-        < DropDownMenu/>
-        <div>{board.description}</div>
+      <div id="board-show-first-line">
+        <div id="board-name-showpg">{board.name}</div>
+        <DropDownMenu />
       </div>
-      <PinIndex/>
+      <div id="board-description-showpg">{board.description}</div>
+      <PinIndex />
     </>
   );
 }

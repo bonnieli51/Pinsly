@@ -1,3 +1,25 @@
-.pin {
+#boardshowpg-pins{
+  display: flex;
+  flex-direction: row;
+  padding: 30px;
+  gap: 20px
+}
+.boardshowpg-pin img {
+  border-radius: 20px;
+}
+
+#total-pins{
   font-weight: bold;
+  font-size: 20px;
+  margin-left: 30px;
+}
+.pin-name{
+  font-weight: bold;
+  margin-left: 5px;
+}
+.pin-user{
+  margin-left: 5px;
+}
+.boardshowpg-pin > *{
+  padding: 3px
 }
