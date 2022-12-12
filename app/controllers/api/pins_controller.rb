@@ -1,9 +1,9 @@
 class Api::PinsController < ApplicationController
     def index
-        # @pin = Pin.where(user_id: params[:user_id])
+        # @pins = Pin.where(user_id: params[:user_id])
         # render :index
 
-        @pin = Pin.where(board_id: params[:board_id])
+        @pins = Pin.where(board_id: params[:board_id])
         render :index
     end
 

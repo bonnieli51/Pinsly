@@ -13,18 +13,17 @@ const receivePins = (pins) => ({
   export const fetchPins = (boardId) => async (dispatch) => {
     const response = await csrfFetch(`/api/boards/${boardId}/pins`);
     const data = await response.json();
-    dispatch(receiveBoards(data));
+    dispatch(receivePins(data));
   };
 
-  const receivePin = (pins) => ({
-    type: RECEIVE_PINS,
-    pins,
+  const receivePin = (pin) => ({
+    type: RECEIVE_PIN,
+    pin,
   });
   
   export const fetchPin = (boardId, pinId) => async (dispatch) => {
     const response = await csrfFetch(`/api/boards/${boardId}/pins/${pinId}`);
     const data = await response.json();
-    dispatch(receiveBoard(data.pin));
+    dispatch(receivePin(data.pin));
   };
 
-  
