@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as boardsActions from "../../store/board";
 import DropDownMenu from "./DropDownMenu";
+import PinIndex from "../Pins/PinIndex/PinIndex";
 
 function BoardShowPage() {
   const dispatch = useDispatch();
@@ -24,6 +25,7 @@ function BoardShowPage() {
         < DropDownMenu/>
         <div>{board.description}</div>
       </div>
+      <PinIndex/>
     </>
   );
 }
