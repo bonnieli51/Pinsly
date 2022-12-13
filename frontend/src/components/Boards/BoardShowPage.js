@@ -24,6 +24,7 @@ function BoardShowPage() {
         <DropDownMenu />
       </div>
       <div id="board-description-showpg">{board.description}</div>
+      <div id="total-pins">{board.pinCount} pins</div>
       <PinIndex />
     </>
   );

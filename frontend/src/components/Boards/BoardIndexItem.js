@@ -7,7 +7,7 @@ import * as pinsActions from "../../store/pin";
 function BoardIndexItem({ board }) {
   const dispatch = useDispatch();
   const { userId } = useParams();
-  const pins = useSelector(({ pins }) => (pins ? Object.values(pins) : {}))
+  const pins = useSelector(({ pins }) => Object.values(pins))
   // console.log(pins[0].imagesUrl ? pins[0].imagesUrl[0] : "")
   useEffect(() => {
     dispatch(pinsActions.fetchAllPins());
@@ -24,7 +24,7 @@ function BoardIndexItem({ board }) {
           <div>img-3</div>
         </div>
         <div className="board-name">{board.name}</div>
-        <div className="num-pins-board"># Pins</div>
+        <div className="num-pins-board">{board.pinCount} pins</div>
       </div>
     </Link>
   );

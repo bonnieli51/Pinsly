@@ -10,8 +10,7 @@ function PinIndexItem({ pin }) {
   return (
     // <Link to={`/boards/${boardId}/pins/${pin.id}`} className="pin">
       <div className="boardshowpg-pin">
-        <img src={pin.imagesUrl[0]} ></img>
-        {/* <div className="pin-image">{pin.imagesUrl[0]}</div> */}
+        <img className="pin-image" src={pin.imagesUrl[0]} ></img>
         <div className="pin-name">{pin.title}</div>
         <div className="pin-user">{pin.userId}</div>
       </div>

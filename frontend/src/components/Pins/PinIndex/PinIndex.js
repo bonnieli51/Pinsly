@@ -7,17 +7,33 @@ import "./PinIndex.css";
 
 function PinIndex() {
   const dispatch = useDispatch();
-  const pins = useSelector(({ pins }) => (pins ? Object.values(pins) : {}));
   //   const { username } = useParams();
   const { boardId } = useParams();
+  // const pins = useSelector(({ pins }) => {
+  //   return Object.values(pins).filter((pin) => {
+  //     return pin.boardId === parseInt(boardId);
+  //   });
+  // });
+  const BoardPinsSelector = (boardId) =>
+    useSelector(({ pins }) => {
+      return Object.values(pins).filter((pin) => {
+        return pin.boardId === parseInt(boardId);
+      });
+    });
+  const AllPinsSelector = () => useSelector(({ pins }) => Object.values(pins));
+  const pins = boardId ? BoardPinsSelector(boardId) : AllPinsSelector();
 
   useEffect(() => {
-    dispatch(pinsActions.fetchPins(boardId));
+    if (boardId) {
+      dispatch(pinsActions.fetchPins(boardId));
+    } else {
+      dispatch(pinsActions.fetchAllPins());
+    }
   }, [dispatch, boardId]);
 
   return (
     <>
-      <div id="total-pins">{pins.length} pins</div>
+      {/* <div id="total-pins">{pins.length} pins</div> */}
       <div id="boardshowpg-pins">
         {pins.map((pin) => (
           <PinIndexItem key={pin.id} pin={pin} />
