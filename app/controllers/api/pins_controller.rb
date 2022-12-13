@@ -5,6 +5,9 @@ class Api::PinsController < ApplicationController
         if params[:board_id]
             @pins = Pin.where(board_id: params[:board_id])
             render :index
+        else
+            @pins = Pin.all
+            render :index
         end
     end
 

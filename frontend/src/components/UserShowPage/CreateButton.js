@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Modal } from "../../context/Modal";
 import NewBoardForm from "../Boards/NewBoardModal";
+import "./UserShowPage.css"
 
 function CreateButton() {
   const [showMenu, setShowMenu] = useState(false);
@@ -28,16 +29,16 @@ function CreateButton() {
      {showModal && (   
           <NewBoardForm setShowModal={setShowModal}/>
       )}
-      <button onClick={openMenu}>
+      <button id="create-button" onClick={openMenu}>
         <i class="fa-solid fa-plus"></i>
       </button>
       {showMenu && (
    
          <div id="create-menu">
-          <div>Create</div>
-          <button id="create-button" onClick={() => setShowModal(true)}>
+          <div id="create-menu-small-font">Create</div>
+          <div className="create-menu-buttons" onClick={() => setShowModal(true)}>
            Board
-          </button>
+          </div>
         </div>
  
       )}

@@ -5,5 +5,6 @@
         if pin.images.attached?
             json.images_url pin.images.map{|image| url_for(image)}
         end
+
     end
   end

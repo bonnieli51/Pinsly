@@ -35,3 +35,47 @@
 #CreateBoardModal{
    height: 300px;
 }
+
+#create-menu{
+    height: 100px;
+    width: 100px; 
+    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 20%);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+    position: absolute;
+    background-color: white;
+ 
+}
+
+#create-menu > * {
+    padding: 10px
+}
+#create-button{
+    border: 0px;
+    height: 48px;
+    width: 48px; 
+    border-radius: 100px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#bottom {
+    padding: 30px;
+}
+#create-menu-small-font{
+    font-size: 12px;
+}
+
+.create-menu-buttons{
+    font-size: 16px;
+    
+}
+
+.create-menu-buttons:hover{
+    background-color: #e5e2e2;   
+    border-radius: 10px;
+
+   
+}

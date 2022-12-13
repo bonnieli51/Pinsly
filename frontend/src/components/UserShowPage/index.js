@@ -24,8 +24,10 @@ function UserShowPage() {
         <div id="usershowpage-email">{sessionUser.email}</div>
         <button>Edit Profile</button>  
       </div>
+      <div id="bottom">
       <CreateButton />
       <BoardIndex/>
+      </div>
     </>
   );
 }

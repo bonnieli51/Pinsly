@@ -77,7 +77,7 @@ const boardsReducer = (state = {}, action) => {
   const newState = { ...state };
   switch (action.type) {
     case RECEIVE_BOARDS:
-      return { ...newState, ...action.boards };
+      return { ...action.boards };
     case RECEIVE_BOARD:
       newState[action.board.id] = action.board;
       return newState;

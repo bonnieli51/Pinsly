@@ -7,7 +7,6 @@ import "./PinIndex.css";
 
 function PinIndex() {
   const dispatch = useDispatch();
-  //   const pins = useSelector((state) => Object.values(state.pins));
   const pins = useSelector(({ pins }) => (pins ? Object.values(pins) : {}));
   //   const { username } = useParams();
   const { boardId } = useParams();

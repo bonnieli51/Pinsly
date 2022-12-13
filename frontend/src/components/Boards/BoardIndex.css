@@ -1,4 +1,5 @@
 #boards {
+  margin-top: 20px;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto auto;
 
@@ -13,6 +14,7 @@
   justify-items: center;
   border: 1px solid black;
   margin-top: 3px;
+
   text-decoration: none;
   color: black;
 }
@@ -23,6 +25,17 @@
     height: 157px;
     border: 1px solid black;
     border-radius: 15px;
+    display: grid;
+    grid-template-columns: auto auto
+}
+
+.board .board-images > *{
+  border: 1px  solid black;
+}
+
+#img-1 {
+  grid-row: 1 / 3;
+ 
 }
 
 .board .board-name{
@@ -33,3 +46,4 @@
 .board-div > *{
   padding: 2px
 }
+
