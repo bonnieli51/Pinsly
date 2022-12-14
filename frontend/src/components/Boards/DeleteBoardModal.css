@@ -1,0 +1,41 @@
+#deleteboardModal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#deleteboardModal > * {
+    padding: 20px
+}
+#deleteboardModal h1 {
+    margin-top: 25px;
+}
+.deleteboardbuttons{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.deleteboardbuttons > * {  
+    border: 0px;
+    border-radius: 20px;
+    font-size: 15px;
+    width: 90%;
+    height: 40px;
+    font-weight: bold;
+    cursor: pointer; 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.deleteboardbuttons>*:last-child{
+    background-color: #E60023;
+    color: white;
+}
+.deleteboardbuttons>*:first-child{
+    color:black;
+    background-color: rgb(216, 215, 215);
+}

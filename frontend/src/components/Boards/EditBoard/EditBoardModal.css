@@ -1,0 +1,48 @@
+#editboard-form{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#editboard-form > *{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+
+#editboard-form-modal > h1{
+    padding: 30px;
+}
+
+.editboardinput {
+    margin: 0 auto;
+    padding: 8px 16px;
+    border-radius: 16px;
+    border: 2px solid rgb(177, 174, 174);
+    width: 250px;
+    height: 30px;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+#editboard-form label {
+    font: 14px;
+    padding: 5px;
+}
+
+#editboard-form button{
+    border: 0px;
+    border-radius: 20px;
+    background-color: #E60023;
+    color: white;
+    font-size: 15px;
+    width: 90px;
+    height: 40px;
+    margin: 30px 0px 15px 200px;
+    font-weight: bold;
+    cursor: pointer; 
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

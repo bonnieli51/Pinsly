@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import * as boardsActions from "../../store/board";
 import { Modal } from "../../context/Modal";
 import { useHistory, useParams } from "react-router-dom";
+import "./NewBoardModal.css";
 
 function NewBoardForm(props) {
   const dispatch = useDispatch();
@@ -35,12 +36,13 @@ function NewBoardForm(props) {
   return (
     <Modal onClose={() => setShowModal(false)}>
       <form id="newboard-form" onSubmit={handleSubmit}>
-        <h1>Create Board</h1>
+        <h1>Create board</h1>
         <label>
           Name
           <input
+            className="newboardinput"
             type="text"
-            placeholder='Like "Places to Go" or "Recipes to Make"'
+            placeholder='Like "Places to Go""'
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -55,13 +57,14 @@ function NewBoardForm(props) {
         <label>
           Description
           <input
+            className="newboardinput"
             type="textarea"
             placeholder="What's your board about?"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
         </label>
-        <button>Create</button>
+        <button id="new-board-create-button">Create</button>
       </form>
     </Modal>
   );

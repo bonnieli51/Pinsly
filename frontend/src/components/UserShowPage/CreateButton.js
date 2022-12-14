@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Modal } from "../../context/Modal";
 import NewBoardForm from "../Boards/NewBoardModal";
 import "./UserShowPage.css"
 
@@ -39,6 +38,7 @@ function CreateButton() {
           <div className="create-menu-buttons" onClick={() => setShowModal(true)}>
            Board
           </div>
+          <div>Pin</div>
         </div>
  
       )}
