@@ -29,7 +29,7 @@ function PinIndex() {
     } else {
       dispatch(pinsActions.fetchAllPins());
     }
-  }, [dispatch, boardId]);
+  }, [boardId]);
 
   return (
     <>

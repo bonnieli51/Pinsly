@@ -15,17 +15,16 @@ function PinIndexItem({ pin }) {
   }, [dispatch, pin]);
 
   const handleClick = () => {
-    history.replace(`/pins/${pin.id}`);
+    history.push(`/pins/${pin.id}`);
   };
 
   return (
-    // <Link to={`pins/${pin.id}`} className="pin-link">
     <div className="boardshowpg-pin" onClick={handleClick}>
-      <img className="pin-image" src={pin.imagesUrl[0]}></img>
+      <img className="pin-image" src={pin.imageUrl}></img>
       <div className="pin-name">{pin.title}</div>
       <div className="pin-user">{user.username}</div>
     </div>
-    // </Link>
+
   );
 }
 export default PinIndexItem;

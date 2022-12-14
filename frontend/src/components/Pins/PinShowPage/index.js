@@ -19,11 +19,17 @@ function PinShowPage() {
   }, [pinId, pin.userId]);
 
   return (
-    <div>
+    <div id="pin-show-page">
       <img className="pin-image" src={pin.imageUrl}></img>
-      <div>{pin.title}</div>
-      <div>{pin.description}</div>
-      <div> Uploaded by {user.username}</div>
+      <div id="pin-show-page-left">
+        <div id = "pin-show-page-pin-title">{pin.title}</div>
+        <div id="pin-show-page-pin-description">{pin.description}</div>
+        <div id="pin-show-page-user">
+            <div>Uploaded by </div>
+            <div id= "pin-show-page-user-img"> {user.username ? user.username[0] : ""}</div>
+          <div> {user.username}</div>
+        </div>
+      </div>
     </div>
   );
 }
