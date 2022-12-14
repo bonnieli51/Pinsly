@@ -6,7 +6,6 @@ import { useHistory, useParams } from "react-router-dom";
 
 function NewBoardForm(props) {
   const dispatch = useDispatch();
-  const history = useHistory();
   const { userId } = useParams();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");

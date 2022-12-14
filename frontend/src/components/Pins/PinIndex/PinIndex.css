@@ -26,3 +26,8 @@
 .boardshowpg-pin > *{
   padding: 3px
 }
+
+.pin-link{
+  text-decoration: none;
+  color: black
+}

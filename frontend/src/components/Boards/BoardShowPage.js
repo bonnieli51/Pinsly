@@ -30,7 +30,7 @@ function BoardShowPage() {
         <DropDownMenu />
       </div>
       <div id="top-board-show-page">
-        <div id="user-board-showpg">{user.username[0]}</div>
+        <div id="user-board-showpg">{user.username ? user.username[0] : ""}</div>
         <div id="board-description-showpg">{board.description}</div>
       </div>
       <div id="total-pins">{board.pinCount} pins</div>

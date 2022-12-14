@@ -13,7 +13,6 @@ function UserShowPage() {
   }
 
   
-  
   return (
     <>
       <div id="usershowpage-personalinfo">
