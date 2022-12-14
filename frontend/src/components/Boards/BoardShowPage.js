@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as boardsActions from "../../store/board";
+import * as usersActions from "../../store/user";
 import DropDownMenu from "./DropDownMenu";
 import PinIndex from "../Pins/PinIndex/PinIndex";
 import "./BoardShowPage.css";
@@ -12,18 +13,26 @@ function BoardShowPage() {
   const board = useSelector(({ boards }) =>
     boards[boardId] ? boards[boardId] : {}
   );
+  const user = useSelector(({ users }) =>
+    users[board.userId] ? users[board.userId] : {}
+  );
 
   useEffect(() => {
     dispatch(boardsActions.fetchBoard(boardId));
+    dispatch(usersActions.fetchUser(board.userId));
   }, [dispatch, boardId]);
 
   return (
-    <>
+    <> 
+      
       <div id="board-show-first-line">
         <div id="board-name-showpg">{board.name}</div>
         <DropDownMenu />
       </div>
-      <div id="board-description-showpg">{board.description}</div>
+      <div id="top-board-show-page">
+        <div id="user-board-showpg">{user.username[0]}</div>
+        <div id="board-description-showpg">{board.description}</div>
+      </div>
       <div id="total-pins">{board.pinCount} pins</div>
       <PinIndex />
     </>

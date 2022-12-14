@@ -8,6 +8,7 @@
 }
 .boardshowpg-pin img {
   border-radius: 20px;
+  width: 250px;
 }
 
 #total-pins{

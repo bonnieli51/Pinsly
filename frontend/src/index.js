@@ -11,6 +11,7 @@ import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
 import * as boardsActions from "./store/board";
 import * as pinsActions from "./store/pin";
+import * as usersActions from "./store/user";
 
 const store = configureStore();
 
@@ -18,8 +19,9 @@ if (process.env.NODE_ENV !== "production") {
   window.store = store;
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
-  window.boardsActions = boardsActions; 
+  window.boardsActions = boardsActions;
   window.pinsActions = pinsActions;
+  window.usersActions = usersActions;
 }
 
 function Root() {
@@ -39,9 +41,9 @@ const renderApplication = () => {
     <React.StrictMode>
       <Root />
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById("root")
   );
-}
+};
 
 if (
   sessionStorage.getItem("currentUser") === null ||
