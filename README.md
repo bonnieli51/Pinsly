@@ -14,6 +14,7 @@
 * Render
 
 # Preview
+Boards
 
 # Code Snippets
 Below is a code snippet of the Board Controller that will Create, Read, Update, and Destroy boards on the backend. These codes communicate with the rails database to activate their specific tasks.

@@ -2,6 +2,7 @@ require "open-uri"
 
 User.destroy_all
 Board.destroy_all
+Pin.destroy_all
 
 demo_user = User.create!(
   username: 'DemoUser', 
@@ -69,8 +70,6 @@ pin_1 = Pin.create!(
   image_1 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/cat.jpeg")
   pin_1.images.attach(io: image_1, filename:"cat.jpeg")
   pin_1.save!
-
-
 
 pin_2 = Pin.create!(
   title:"Cat Looking Up",
