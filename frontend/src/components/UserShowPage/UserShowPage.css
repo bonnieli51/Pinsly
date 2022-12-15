@@ -1,81 +1,82 @@
-#usershowpage-personalinfo{
-    margin-top: 25px;
-    display: flex;
-    flex-direction: column;
-    gap:15px;
-    align-items: center;
+#usershowpage-personalinfo {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center;
 }
-#usershowpage-initial{
-    width: 120px;
-    height: 120px; 
-    background-color: #eaeaea;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 100%;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-#usershowpage-username{
-    font-size: 36px;
-    font-weight: bold;
+#usershowpage-initial {
+  width: 120px;
+  height: 120px;
+  background-color: #eaeaea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  font-size: 40px;
+  font-weight: bold;
 }
 
-#usershowpage-email{
-    color:grey;
+#usershowpage-username {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#usershowpage-email {
+  color: grey;
 }
 
 #usershowpage-personalinfo button {
-    padding: 12px 16px;
-    border: 0px; 
-    border-radius: 24px;
+  padding: 12px 16px;
+  border: 0px;
+  border-radius: 24px;
 }
 
-#CreateBoardModal{
-   height: 300px;
+#CreateBoardModal {
+  height: 300px;
 }
 
-#create-menu{
-    height: 100px;
-    width: 100px; 
-    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 20%);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    z-index: 10;
-    position: absolute;
-    background-color: white;
- 
+#create-menu {
+  height: 100px;
+  width: 100px;
+  box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 20%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+  position: absolute;
+  background-color: white;
 }
 
 #create-menu > * {
-    padding: 10px
+  padding: 10px;
 }
-#create-button{
-    border: 0px;
-    height: 48px;
-    width: 48px; 
-    border-radius: 100px;
-    font-size: 20px;
-    font-weight: bold;
+#create-button {
+  border: 0px;
+  height: 48px;
+  width: 48px;
+  border-radius: 100px;
+  font-size: 20px;
+  font-weight: bold;
 }
 #bottom {
-    padding: 30px;
+  padding: 30px;
 }
-#create-menu-small-font{
-    font-size: 12px;
-}
-
-.create-menu-buttons{
-    font-size: 16px;
-    
+#create-menu-small-font {
+  font-size: 12px;
 }
 
-.create-menu-buttons:hover{
-    background-color: #e5e2e2;   
-    border-radius: 10px;
+.create-menu-buttons {
+  font-size: 16px;
+}
 
-   
+.create-menu-buttons:hover {
+  background-color: #e5e2e2;
+  border-radius: 10px;
+}
+
+#usershowpage-saved{
+    text-decoration: underline;
+    font-weight: bold;
 }

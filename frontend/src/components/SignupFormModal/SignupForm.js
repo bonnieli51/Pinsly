@@ -32,7 +32,10 @@ function SignupForm() {
 
   return (
     <form id="signup-form" onSubmit={handleSubmit}>
-      <div className="form-logo"><i class="fa-brands fa-pinterest"></i></div>
+      <div className="form-logo">
+        {/* <i class="fa-brands fa-pinterest"></i> */}
+        <i class="fa-solid fa-poo"></i>
+      </div>
       <h1> Welcome to Pinsly </h1>
       <h3> Find new ideas to try </h3>
 
@@ -53,7 +56,7 @@ function SignupForm() {
           ) : null
         )}
       </ul>
-   
+
       <label>
         Password
         <input
@@ -95,6 +98,10 @@ function SignupForm() {
         )}
       </ul>
       <button type="submit">Continue</button>
+      <p id="signup-form-p">
+        By continuing, you agree to Pinsly's <p id="bold">Terms of Service</p>{" "}
+        and acknowledge you've read our <p id="bold">Privacy Policy.</p>
+      </p>
     </form>
   );
 }

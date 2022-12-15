@@ -19,12 +19,16 @@ function PinIndexItem({ pin }) {
   };
 
   return (
-    <div className="boardshowpg-pin" onClick={handleClick}>
-      <img className="pin-image" src={pin.imageUrl}></img>
-      <div className="pin-name">{pin.title}</div>
-      <div className="pin-user">{user.username}</div>
+    <div className="boardshowpg-pin">
+      <div onClick={handleClick}>
+        <img className="pin-image" src={pin.imageUrl}></img>
+        <div className="pin-name">{pin.title}</div>
+      </div>
+      <Link className="pin-user" to={`/${pin.userId}`} >
+        <div id="pin-index-user">{user.username ? user.username[0] :""}</div>
+        <div >{user.username}</div>
+      </Link>
     </div>
-
   );
 }
 export default PinIndexItem;

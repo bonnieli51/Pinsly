@@ -30,7 +30,7 @@ function LoginForm() {
   return (
     <>
       <form id="login-form" onSubmit={handleSubmit}>
-        <div className="form-logo"><i class="fa-brands fa-pinterest"></i></div>
+        <div className="form-logo"><i class="fa-solid fa-poo"></i></div>
         <h1> Welcome to Pinsly </h1>
         <label>
           Email
@@ -81,6 +81,10 @@ function LoginForm() {
       >
         Log In as Demo User
       </button>
+      <p id="signup-form-p">
+        By continuing, you agree to Pinsly's <p id="bold">Terms of Service</p>{" "}
+        and acknowledge you've read our <p id="bold">Privacy Policy.</p>
+      </p>
     </>
   );
 }

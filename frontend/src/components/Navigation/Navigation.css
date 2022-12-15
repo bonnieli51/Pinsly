@@ -108,7 +108,7 @@
   cursor: pointer;
   font-weight: bold;
 }
-#logo {
+.logo {
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -120,7 +120,7 @@
   margin-left: 16px;
   font-weight: bold;
 }
-#logo i {
+.logo i {
   position: relative;
   right: -10px;
 }

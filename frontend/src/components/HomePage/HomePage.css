@@ -1,0 +1,15 @@
+#splash-images > * {
+  width: 100%;
+}
+
+.back-to-top{
+    border: 0px;
+    width: 3vw; 
+    height: 3vw;
+    border-radius: 100%;
+    position: absolute;
+    left: 48.5%;
+    top: 283%;
+    background-color: rgb(156, 3, 67);
+    color:white
+}

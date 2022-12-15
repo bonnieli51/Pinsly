@@ -32,6 +32,7 @@ function DropDownMenu() {
       {showEditBoardModal && (
         <EditBoardModal setShowEditBoardModal={setShowEditBoardModal} />
       )}
+      
       <button id="board-show-pg-drop-button" onClick={openMenu}>
         <i class="fa-solid fa-ellipsis"></i>
       </button>

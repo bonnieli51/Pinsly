@@ -9,15 +9,14 @@ import "./Navigation.css";
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
 
-  
-
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
       <>
         <div id="navbar-left">
-          <NavLink id="logo" exact to="/">
-            <i class="fa-brands fa-pinterest"></i>
+          <NavLink className="logo"id="logo" exact to="/">
+            {/* <i class="fa-brands fa-pinterest"></i> */}
+            <i class="fa-solid fa-poo"></i>
           </NavLink>
           <NavLink className="NavLinkText" exact to="/">
             Home
@@ -32,19 +31,23 @@ function Navigation() {
         <div id="navbar-right">
           <i id="search-icon" class="fa-solid fa-magnifying-glass" />
           <input id="search-bar" type="text" placeholder="Search" />
-          <button className="Right-Login-Navbar-buttons">
-            <span class="tooltiptext">Notifications</span>
-            <i class="fa-solid fa-bell" />
-          </button>
-          <button className="Right-Login-Navbar-buttons">
-            <span class="tooltiptext">Messages</span>
-            <i class="fa-solid fa-comment-dots"></i>
-          </button>
+          <a href="https://github.com/bonnieli51/Pinsly">
+            <button className="Right-Login-Navbar-buttons">
+              <span class="tooltiptext">Bonnie's Github</span>
+              <i class="fa-brands fa-github" />
+            </button>
+          </a>
+          <a href="https://www.linkedin.com/login">
+            <button className="Right-Login-Navbar-buttons">
+              <span class="tooltiptext">Bonnie's LinkedIn</span>
+              <i class="fa-brands fa-linkedin"></i>
+            </button>
+          </a>
           <NavLink
-            // to={`/${sessionUser.username}`}
             to={`/${sessionUser.id}`}
-            className="Right-Login-Navbar-buttons"   
-            id="profile-button">
+            className="Right-Login-Navbar-buttons"
+            id="profile-button"
+          >
             <span class="tooltiptext">Your Profile</span>
             {sessionUser.username[0].toUpperCase()}
           </NavLink>
@@ -55,9 +58,10 @@ function Navigation() {
   } else {
     sessionLinks = (
       <>
-       <NavLink id="logo" exact to="/">
-            <i class="fa-brands fa-pinterest"></i>
-            &nbsp;&nbsp;&nbsp;Pinsly
+        <NavLink className="logo" exact to="/">
+          {/* <i class="fa-brands fa-pinterest"></i> */}
+          <i class="fa-solid fa-poo"></i>
+          &nbsp;&nbsp;&nbsp;Pinsly
         </NavLink>
         {/* <NavLink id="signuplogo" className="Home" exact to="/">
           Pinsly
@@ -67,10 +71,10 @@ function Navigation() {
             <a href="#">About</a>
           </li>
           <li>
-            <a href="#">Business</a>
+            <a href="https://github.com/bonnieli51/Pinsly">GitHub</a>
           </li>
           <li>
-            <a href="#">Blog</a>
+            <a href="https://www.linkedin.com/login">LinkedIn</a>
           </li>
           <li>
             <LoginFormModal />

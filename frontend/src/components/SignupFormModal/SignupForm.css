@@ -68,3 +68,11 @@
   padding: 13px;
 }
 
+#signup-form-p {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+#signup-form-p #bold {
+  font-weight: bold;
+}

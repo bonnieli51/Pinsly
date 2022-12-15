@@ -1,33 +1,55 @@
-#boardshowpg-pins{
+#boardshowpg-pins {
   /* display: flex;
   flex-direction: row; */
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 30px;
-  gap: 20px
+  gap: 20px;
 }
 .boardshowpg-pin img {
   border-radius: 20px;
   width: 250px;
 }
 
-#total-pins{
+#total-pins {
   font-weight: bold;
   font-size: 20px;
   margin-left: 30px;
 }
-.pin-name{
+.pin-name {
   font-weight: bold;
   margin-left: 5px;
 }
-.pin-user{
+.pin-user {
   margin-left: 5px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
 }
-.boardshowpg-pin > *{
-  padding: 3px
+#pin-index-user {
+  width: 30px;
+  height: 30px;
+  background-color: gainsboro;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pin-user > * {
+  color: black;
+}
+.boardshowpg-pin > * {
+  padding: 3px;
 }
 
-.pin-link{
+.pin-link {
   text-decoration: none;
-  color: black
+  color: black;
+}
+
+.pin-image:hover {
+  filter: brightness(50%);
+  cursor: pointer;
 }
