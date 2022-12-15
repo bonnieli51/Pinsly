@@ -67,7 +67,7 @@ pin_1 = Pin.create!(
   user_id: demo_user.id,
   board_id: board_1.id )
 
-  image_1 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/cat.jpeg")
+  image_1 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/pinsly+images/cat.jpeg")
   pin_1.images.attach(io: image_1, filename:"cat.jpeg")
   pin_1.save!
 
@@ -333,7 +333,7 @@ pin_1_1 = Pin.create!(
     user_id: demo_user.id,
     board_id: board_6.id )
   
-    image_1 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/cat.jpeg")
+    image_1 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/pinsly+images/cat.jpeg")
     pin_1_1.images.attach(io: image_1, filename:"cat.jpeg")
     pin_1_1.save!
 
