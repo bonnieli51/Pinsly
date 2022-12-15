@@ -1,7 +1,6 @@
 class Api::BoardsController < ApplicationController
     before_action :require_logged_in
 
-
     def index
         @boards = Board.where(user_id: params[:user_id])
         render :index
