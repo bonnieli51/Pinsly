@@ -1,15 +1,52 @@
 #splash-images > * {
   width: 100%;
+  overflow: hidden;
 }
 
-.back-to-top{
-    border: 0px;
-    width: 3vw; 
-    height: 3vw;
-    border-radius: 100%;
-    position: absolute;
-    left: 48.5%;
-    top: 283%;
-    background-color: rgb(156, 3, 67);
-    color:white
+.back-to-top {
+  border: 0px;
+  width: 3vw;
+  height: 3vw;
+  border-radius: 100%;
+  position: absolute;
+  left: 48.5%;
+  top: 2255px;
+
+  background-color: rgb(156, 3, 67);
+  color: white;
+}
+
+#splash-links > * {
+  text-decoration: none;
+  color: black;
+}
+#splash-links > *:hover {
+  text-decoration: underline;
+}
+#splash-links {
+  width: 99%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 200px;
+  align-items: center;
+  background-color: white;
+  position: absolute;
+  /* bottom: -283.6%; */
+  top: 2975.6px;
+}
+
+#splash-sign-up {
+  border-radius: 32px;
+  text-align: center;
+  width: 28vw;
+  height: 74vh;
+  background-color: white;
+  position: absolute;
+  bottom: -2120px;
+  right: 150px;
+}
+#splash_img_4{
+    filter: brightness(50%)
 }
