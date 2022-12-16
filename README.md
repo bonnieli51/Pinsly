@@ -17,19 +17,15 @@
 ## Users
 
 Logging In/ Logging Out/ Signing Up
-<video width="320" height="240" controls>
-  <source src="./images/User-login-signup.mov" type="video/mp4">
-</video>
+![](./images/User-login-signup.gif)
+
 
 ## Boards
 
 ![boards](./images/boards_read_me.png)
 
-
 Creating and Deleting Board
-<video width="320" height="240" controls>
-  <source src="./images/Create_Delete_Board.mov" type="video/mp4">
-</video>
+![](./images/Create_Delete_Board.gif)
 
 
 # Code Snippets
