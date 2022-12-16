@@ -34,7 +34,7 @@ function SignupForm() {
     <form id="signup-form" onSubmit={handleSubmit}>
       <div className="form-logo">
         {/* <i class="fa-brands fa-pinterest"></i> */}
-        <i class="fa-solid fa-poo"></i>
+        <i class="fa-solid fa-lemon"></i>
       </div>
       <h1> Welcome to Pinsly </h1>
       <h3> Find new ideas to try </h3>

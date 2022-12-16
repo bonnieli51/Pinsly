@@ -20,7 +20,7 @@ function HomePage() {
     );
   } else {
     return (
-      <div >
+      <div>
         <div id="splash-images">
           <img src="https://pinsly-seeds.s3.amazonaws.com/pinsly+images/pinsly+splash+images/splash_2.png"></img>
           <img src="https://pinsly-seeds.s3.amazonaws.com/pinsly+images/pinsly+splash+images/splash_3.png"></img>

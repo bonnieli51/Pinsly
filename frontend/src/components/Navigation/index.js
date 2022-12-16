@@ -16,7 +16,7 @@ function Navigation() {
         <div id="navbar-left">
           <NavLink className="logo"id="logo" exact to="/">
             {/* <i class="fa-brands fa-pinterest"></i> */}
-            <i class="fa-solid fa-poo"></i>
+         <i class="fa-solid fa-lemon"></i>
           </NavLink>
           <NavLink className="NavLinkText" exact to="/">
             Home
@@ -60,7 +60,7 @@ function Navigation() {
       <>
         <NavLink className="logo" exact to="/">
           {/* <i class="fa-brands fa-pinterest"></i> */}
-          <i class="fa-solid fa-poo"></i>
+       <i class="fa-solid fa-lemon"></i>
           &nbsp;&nbsp;&nbsp;Pinsly
         </NavLink>
         {/* <NavLink id="signuplogo" className="Home" exact to="/">
