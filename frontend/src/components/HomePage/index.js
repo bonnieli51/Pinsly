@@ -33,7 +33,9 @@ function HomePage() {
             <SignupForm />
           </div>
           <div id="splash-links">
-            <a href="#">About</a>
+            <a href="https://github.com/bonnieli51/Pinsly/blob/main/README.md">
+              About
+            </a>
             <a href="https://www.linkedin.com/login">LinkedIn</a>
             <a href="https://github.com/bonnieli51/Pinsly">GitHub</a>
           </div>

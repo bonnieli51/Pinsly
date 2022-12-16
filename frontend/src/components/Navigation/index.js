@@ -14,15 +14,18 @@ function Navigation() {
     sessionLinks = (
       <>
         <div id="navbar-left">
-          <NavLink className="logo"id="logo" exact to="/">
+          <NavLink className="logo" id="logo" exact to="/">
             {/* <i class="fa-brands fa-pinterest"></i> */}
-         <i class="fa-solid fa-lemon"></i>
+            <i class="fa-solid fa-lemon"></i>
           </NavLink>
           <NavLink className="NavLinkText" exact to="/">
             Home
           </NavLink>
-          <a href="#" className="NavLinkText">
-            Today
+          <a
+            href="https://github.com/bonnieli51/Pinsly/blob/main/README.md"
+            className="NavLinkText"
+          >
+            About
           </a>
           <a href="#" className="NavLinkText">
             Create
@@ -60,7 +63,7 @@ function Navigation() {
       <>
         <NavLink className="logo" exact to="/">
           {/* <i class="fa-brands fa-pinterest"></i> */}
-       <i class="fa-solid fa-lemon"></i>
+          <i class="fa-solid fa-lemon"></i>
           &nbsp;&nbsp;&nbsp;Pinsly
         </NavLink>
         {/* <NavLink id="signuplogo" className="Home" exact to="/">
@@ -68,7 +71,7 @@ function Navigation() {
         </NavLink> */}
         <ul id="navbar-right">
           <li>
-            <a href="#">About</a>
+            <a href="https://github.com/bonnieli51/Pinsly/blob/main/README.md">About</a>
           </li>
           <li>
             <a href="https://github.com/bonnieli51/Pinsly">GitHub</a>
