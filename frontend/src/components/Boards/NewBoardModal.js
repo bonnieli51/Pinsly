@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import * as boardsActions from "../../store/board";
 import { Modal } from "../../context/Modal";
-import { useHistory, useParams } from "react-router-dom";
+import { , useParams } from "react-router-dom";
 import "./NewBoardModal.css";
 
 function NewBoardForm(props) {

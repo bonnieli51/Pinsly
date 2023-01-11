@@ -15,7 +15,7 @@ function UserShowPage() {
 
   useEffect(() => {
     dispatch(UsersActions.fetchUser(userId));
-  }, [dispatch]);
+  }, [dispatch,userId]);
 
   if (!sessionUser) {
     return <Redirect to="/"></Redirect>;
