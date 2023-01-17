@@ -6,6 +6,12 @@ class Api::BoardPinsController < ApplicationController
             @pins = board.pins
             render '/api/pins/index'
         else 
+            @pins = {}
+            Board.all.ids.each do |boardId| 
+                board = Board.find_by(id: boardId)
+                @pins[boardId] = board.pins
+            end
+
             render json: { errors: ["Error"] }, status: :unprocessable_entity
         end
 

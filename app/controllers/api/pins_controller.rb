@@ -2,18 +2,17 @@ class Api::PinsController < ApplicationController
     before_action :require_logged_in
     
    
-    # commented out because BoardPins Controller will do this
-    # def index
-    #     # @pins = Pin.where(user_id: params[:user_id])
-    #     # render :index
-    #     if params[:board_id]
-    #         @pins = Pin.where(board_id: params[:board_id])
-    #         render :index
-    #     else
-    #         @pins = Pin.all
-    #         render :index
-    #     end
-    # end
+    def index
+        # @pins = Pin.where(user_id: params[:user_id])
+        # render :index
+        if params[:board_id]
+            @pins = Pin.where(board_id: params[:board_id])
+            render :index
+        else
+            @pins = Pin.all
+            render :index
+        end
+    end
 
     def show 
         @pin = Pin.find(params[:id])
