@@ -17,7 +17,7 @@ export const fetchPins = (boardId) => async (dispatch) => {
 };
 
 export const fetchBoardPins = (boardId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/boards/${boardId}/board_pins]`);
+  const response = await csrfFetch(`/api/boards/${boardId}/board_pins`);
   const data = await response.json();
   dispatch(receivePins(data));
 };

@@ -14,14 +14,16 @@ function PinIndex() {
   //     return pin.boardId === parseInt(boardId);
   //   });
   // });
-  const BoardPinsSelector = (boardId) =>
-    useSelector(({ pins }) => {
-      return Object.values(pins).filter((pin) => {
-        return pin.boardId === parseInt(boardId);
-      });
-    });
-  const AllPinsSelector = () => useSelector(({ pins }) => Object.values(pins));
-  const pins = boardId ? BoardPinsSelector(boardId) : AllPinsSelector();
+  // const BoardPinsSelector = (boardId) =>
+  //   useSelector(({ pins }) => {
+  //     return Object.values(pins).filter((pin) => {
+  //       return pin.boardId === parseInt(boardId);
+  //     });
+  //   });
+  // const AllPinsSelector = () => useSelector(({ pins }) => Object.values(pins));
+  // const pins = boardId ? BoardPinsSelector(boardId) : AllPinsSelector();
+  const pins = useSelector((state) => Object.values(state.pins));
+  console.log(pins);
 
   useEffect(() => {
     if (boardId) {
