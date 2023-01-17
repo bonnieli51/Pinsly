@@ -25,7 +25,9 @@ function PinIndex() {
 
   useEffect(() => {
     if (boardId) {
-      dispatch(pinsActions.fetchPins(boardId));
+      // previous thunk:
+      // dispatch(pinsActions.fetchPins(boardId));
+      dispatch(pinsActions.fetchBoardPins(boardId));
     } else {
       dispatch(pinsActions.fetchAllPins());
     }

@@ -4,6 +4,6 @@ class Board < ApplicationRecord
     message: "Try a different name. You already have a board with this name!" }
 
     belongs_to :user
-    has_many :board_pins, dependent: :destroy
-    has_many :pins, through: :board_pins
+    has_many :board_pin, dependent: :destroy
+    has_many :pins, through: :board_pin
 end
