@@ -11,8 +11,9 @@ class Api::BoardPinsController < ApplicationController
                 board = Board.find_by(id: boardId)
                 @pins[boardId] = board.pins
             end
+            render json: @pins
 
-            render json: { errors: ["Error"] }, status: :unprocessable_entity
+            # render json: { errors: ["Error"] }, status: :unprocessable_entity
         end
 
     end
