@@ -4,7 +4,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   row-gap: 30px;
-
 }
 
 .board {
@@ -20,35 +19,33 @@
 }
 
 .board .board-images {
-    margin-top: 12px;
-    width:230px; 
-    height: 157px;
-    border-radius: 30px;
-    display: grid;
-    grid-template-columns: auto auto;
-    background-color: gainsboro;
-    overflow: hidden;
-    box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 10%);
-
+  margin-top: 12px;
+  width: 230px;
+  height: 157px;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: auto auto;
+  background-color: gainsboro;
+  overflow: hidden;
+  box-shadow: 0px 0px 16px 0px rgb(0 0 0 / 10%);
 }
 
-.board-images > *{
+.board-images > * {
   width: 115px;
   height: 78px;
   background-color: gainsboro;
 }
 
-#boardimage1{
-  height:157px;
-  grid-row: 1 / 3
+#boardimage1 {
+  height: 157px;
+  grid-row: 1 / 3;
 }
 
-.board .board-name{
+.board .board-name {
   font-size: 20px;
   font-weight: bold;
 }
 
-.board-div > *{
-  padding: 2px
+.board-div > * {
+  padding: 2px;
 }
-

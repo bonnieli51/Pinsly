@@ -1,16 +1,18 @@
-#boardshowpg-pins {
-  /* display: flex;
-  flex-direction: row; */
+/* #boardshowpg-pins {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 30px;
   gap: 20px;
-}
+} */
 .boardshowpg-pin img {
-  border-radius: 20px;
-  width: 250px;
+  /* border-radius: 20px;
+  width: 250px; */
 }
-
+.pin-image {
+  max-width: 230px;
+  width: auto;
+  height: auto;
+}
 #total-pins {
   font-weight: bold;
   font-size: 20px;
@@ -52,4 +54,19 @@
 .pin-image:hover {
   filter: brightness(50%);
   cursor: pointer;
+}
+
+.my-masonry-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 30px;
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px;
+  background-clip: padding-box;
+}
+.my-masonry-grid_column > div {
+  margin-bottom: 30px;
 }
