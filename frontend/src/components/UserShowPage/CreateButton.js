@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import NewBoardForm from "../Boards/NewBoardModal";
-import "./UserShowPage.css"
+import "./UserShowPage.css";
 
 function CreateButton() {
   const [showMenu, setShowMenu] = useState(false);
@@ -24,23 +25,23 @@ function CreateButton() {
 
   return (
     <>
-       
-     {showModal && (   
-          <NewBoardForm setShowModal={setShowModal}/>
-      )}
+      {showModal && <NewBoardForm setShowModal={setShowModal} />}
       <button id="create-button" onClick={openMenu}>
         <i class="fa-solid fa-plus"></i>
       </button>
       {showMenu && (
-   
-         <div id="create-menu">
+        <div id="create-menu">
           <div id="create-menu-small-font">Create</div>
-          <div className="create-menu-buttons" onClick={() => setShowModal(true)}>
-           Board
+          <div
+            className="create-menu-buttons"
+            onClick={() => setShowModal(true)}
+          >
+            Board
           </div>
-          <div>Pin</div>
+          <NavLink className="NavLinkText" exact to="/pin/new">
+            Pin
+          </NavLink>
         </div>
- 
       )}
     </>
   );
