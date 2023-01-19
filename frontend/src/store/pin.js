@@ -16,6 +16,18 @@ export const fetchPins = (boardId) => async (dispatch) => {
   dispatch(receivePins(data));
 };
 
+export const fetchAllBoardPins = () => async (dispatch) => {
+  const response = await csrfFetch(`/api/board_pins`);
+  const data = await response.json();
+  dispatch(receivePins(data));
+};
+
+export const fetchBoardPins = (boardId) => async (dispatch) => {
+  const response = await csrfFetch(`/api/boards/${boardId}/board_pins`);
+  const data = await response.json();
+  dispatch(receivePins(data));
+};
+
 const receivePin = (pin) => ({
   type: RECEIVE_PIN,
   pin,

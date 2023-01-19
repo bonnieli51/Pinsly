@@ -7,16 +7,27 @@ import * as pinsActions from "../../store/pin";
 function BoardIndexItem({ board }) {
   const dispatch = useDispatch();
   const { userId } = useParams();
-  const pins = useSelector(({ pins }) =>
-    Object.values(pins).filter((pin) => pin.boardId === parseInt(board.id))
-  );
-  const firstThreePins = pins.length > 3 ? pins.slice(0, 3) : pins.slice();
+  // const pins = useSelector(({ pins }) =>
+  //   Object.values(pins).filter((pin) => pin.boardId === parseInt(board.id))
+  // );
+
+  // const firstThreePins = pins.length > 3 ? pins.slice(0, 3) : pins.slice();
+  // const firstThreePinsImg = firstThreePins.map((pin) =>
+  //   pin.imageUrl ? pin.imageUrl : ""
+  // );
+  const pins = useSelector((state) => state.pins);
+
+  const boardpins = pins[board.id] ? pins[board.id] : [];
+  const firstThreePins =
+    boardpins.length > 3 ? boardpins.slice(0, 3) : boardpins.slice();
+
   const firstThreePinsImg = firstThreePins.map((pin) =>
     pin.imageUrl ? pin.imageUrl : ""
   );
-
+  console.log(pins);
   useEffect(() => {
-    dispatch(pinsActions.fetchAllPins());
+    // dispatch(pinsActions.fetchAllPins());
+    dispatch(pinsActions.fetchAllBoardPins());
   }, [dispatch]);
 
   return (

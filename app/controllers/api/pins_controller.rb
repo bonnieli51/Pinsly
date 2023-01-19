@@ -1,6 +1,7 @@
 class Api::PinsController < ApplicationController
     before_action :require_logged_in
     
+   
     def index
         # @pins = Pin.where(user_id: params[:user_id])
         # render :index
