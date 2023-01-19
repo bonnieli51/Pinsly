@@ -61,13 +61,11 @@ function PinIndex() {
       {/* {pins.map((pin) => ( */}
       <Masonry
         breakpointCols={breakpointColumnsObj}
-        className="my-masonry-grid"
-        columnClassName="my-masonry-grid_column"
+        className="masonry-grid"
+        columnClassName="masonry-grid_column"
       >
-        {/* <PinIndexItem key={pin.id} pin={pin} /> */}
         {items}
       </Masonry>
-      {/* ))} */}
     </>
   );
 }
