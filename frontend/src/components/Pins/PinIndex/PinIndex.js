@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import * as pinsActions from "../../../store/pin";
 import PinIndexItem from "./PinIndexItem";
+import Masonry from "react-masonry-css";
 import "./PinIndex.css";
 
 function PinIndex() {
@@ -22,7 +23,9 @@ function PinIndex() {
   //   });
   // const AllPinsSelector = () => useSelector(({ pins }) => Object.values(pins));
   // const pins = boardId ? BoardPinsSelector(boardId) : AllPinsSelector();
-  const pins = useSelector((state) => Object.values(state.pins));
+  const pins = useSelector((state) =>
+    state.pins ? Object.values(state.pins) : []
+  );
   console.log(pins);
 
   useEffect(() => {
@@ -35,14 +38,34 @@ function PinIndex() {
     }
   }, [boardId]);
 
+  const breakpointColumnsObj = {
+    default: 6,
+    1100: 5,
+    700: 4,
+    500: 3,
+  };
+
+  const items =
+    pins &&
+    pins.map(function (pin) {
+      return <PinIndexItem key={pin.id} pin={pin} />;
+    });
   return (
     <>
       {/* <div id="total-pins">{pins.length} pins</div> */}
-      <div id="boardshowpg-pins">
+      {/* <div id="boardshowpg-pins">
         {pins.map((pin) => (
           <PinIndexItem key={pin.id} pin={pin} />
         ))}
-      </div>
+      </div> */}
+      {/* {pins.map((pin) => ( */}
+      <Masonry
+        breakpointCols={breakpointColumnsObj}
+        className="masonry-grid"
+        columnClassName="masonry-grid_column"
+      >
+        {items}
+      </Masonry>
     </>
   );
 }
