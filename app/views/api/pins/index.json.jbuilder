@@ -1,6 +1,6 @@
 @pins.each do |pin|
     json.set! pin.id do
-        json.extract! pin, :id, :title, :description, :user_id, :board_id
+        json.extract! pin, :id, :title, :description, :user_id
 
         json.image_url  url_for(pin.images[0])
         # if pin.images.attached?

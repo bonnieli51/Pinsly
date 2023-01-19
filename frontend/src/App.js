@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import UserShowPage from "./components/UserShowPage";
 import BoardShowPage from "./components/Boards/BoardShowPage";
 import HomePage from "./components/HomePage";
+import NewPinForm from "./components/Pins/NewPinForm";
 import PinShowPage from "./components/Pins/PinShowPage";
 
 function App() {
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route exact path={`/pins/:pinId`}>
           <PinShowPage />
+        </Route>
+        <Route exact path={`/pin/new`}>
+          <NewPinForm />
         </Route>
         <Route exact path={`/`}>
           <HomePage />
