@@ -63,7 +63,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_19_203019) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text "description"
+    t.text "description", null: false
     t.bigint "pin_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
