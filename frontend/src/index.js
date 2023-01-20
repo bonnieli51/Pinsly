@@ -12,6 +12,7 @@ import * as sessionActions from "./store/session";
 import * as boardsActions from "./store/board";
 import * as pinsActions from "./store/pin";
 import * as usersActions from "./store/user";
+import * as commentsActions from "./store/comment";
 
 const store = configureStore();
 
@@ -22,6 +23,7 @@ if (process.env.NODE_ENV !== "production") {
   window.boardsActions = boardsActions;
   window.pinsActions = pinsActions;
   window.usersActions = usersActions;
+  window.commentsActions = commentsActions
 }
 
 function Root() {
