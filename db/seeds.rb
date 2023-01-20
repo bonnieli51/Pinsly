@@ -26,6 +26,13 @@ user_2 = User.create(
   password: 'password' 
 )
 
+user_3 = User.create(
+  username: 'JustinOut', 
+  email: 'justinhwang@user.io', 
+  age: 30, 
+  password: 'password' 
+)
+
 board_1 = Board.create!(
   name: "Cats",
   description: "MeowMeow",
@@ -79,6 +86,24 @@ pin_2 = Pin.create!(
   image_2 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/pinsly+images/cat_1.jpeg")
   pin_2.images.attach(io: image_2, filename:"cat_1.jpeg")
   pin_2.save!
+
+  comment_1 = Comment.create!(
+  description: "Legs are too short!",
+  pin_id: pin_1.id,
+  user_id: user_1.id
+)
+
+comment_2 = Comment.create!(
+  description: "I want that cat",
+  pin_id: pin_1.id,
+  user_id: user_2.id
+)
+
+comment_3 = Comment.create!(
+  description: "I guess that cat is cute.",
+  pin_id: pin_1.id,
+  user_id: user_3.id
+)
   
 pin_3 = Pin.create!(
   title:"Cat Eating",
