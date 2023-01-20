@@ -2,22 +2,17 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect, useParams } from "react-router-dom";
 import * as pinsActions from "../../../store/pin";
-import * as usersActions from "../../../store/user";
 import "./PinShowPage.css";
 
 function PinShowPage() {
   const dispatch = useDispatch();
   const { pinId } = useParams();
   const pin = useSelector(({ pins }) => (pins[pinId] ? pins[pinId] : {}));
-  const user = useSelector(({ users }) =>
-    users[pin.userId] ? users[pin.userId] : {}
-  );
   const sessionUser = useSelector((state) => state.session.user);
 
   useEffect(() => {
     dispatch(pinsActions.fetchPin(pinId));
-    dispatch(usersActions.fetchUser(pin.userId));
-  }, [pinId, pin.userId]);
+  }, [pinId]);
 
   if (!sessionUser) {
     return <Redirect to="/"></Redirect>;
@@ -32,9 +27,9 @@ function PinShowPage() {
         <div id="pin-show-page-user">
           <div>Uploaded by </div>
           <div id="pin-show-page-user-img">
-            {user.username ? user.username[0] : ""}
+            {pin.username ? pin.username[0] : ""}
           </div>
-          <div> {user.username}</div>
+          <div> {pin.username}</div>
         </div>
       </div>
     </div>
