@@ -1,5 +1,6 @@
 .comments-list {
   max-width: 200%;
+  max-height: 30%;
   height: auto;
   overflow-y: auto;
   float: left;

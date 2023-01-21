@@ -15,12 +15,19 @@ function CommentIndex({ pinId }) {
 
   return (
     <>
-      <div className="comments-list">
-        {comments &&
-          comments.map((comment) => (
-            <CommentIndexItem key={comment.id} comment={comment} />
-          ))}
-      </div>
+      <div id="comment-count">{comments.length} Comments</div>
+      {comments.length === 0 ? (
+        <div className="no-comments">
+          No comments yet! Add one to start the conversation.
+        </div>
+      ) : (
+        <div className="comments-list">
+          {comments &&
+            comments.map((comment) => (
+              <CommentIndexItem key={comment.id} comment={comment} />
+            ))}
+        </div>
+      )}
     </>
   );
 }
