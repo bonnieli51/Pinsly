@@ -25,15 +25,15 @@ function PinShowPage() {
     <div id="pin-show-page">
       <img className="pin-image" src={pin.imageUrl}></img>
 
-      <div id="pin-show-page-left">
+      <div id="pin-show-page-right">
         <div id="pin-show-page-pin-title">{pin.title}</div>
         <div id="pin-show-page-pin-description">{pin.description}</div>
         <div id="pin-show-page-user">
-          <div>Uploaded by </div>
+          <div id="pin-show-page-text">Uploaded by </div>
           <div id="pin-show-page-user-img">
             {pin.username ? pin.username[0] : ""}
           </div>
-          <div> {pin.username}</div>
+          <div id="pin-show-page-username"> {pin.username}</div>
         </div>
         <CommentIndex pinId={pinId} />
         <NewComment pinId={pinId} />

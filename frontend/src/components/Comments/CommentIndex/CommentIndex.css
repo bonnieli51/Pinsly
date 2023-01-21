@@ -1,9 +1,9 @@
 .comments-list {
-  max-width: 200%;
+  max-width: 100%;
   max-height: 30%;
   height: auto;
   overflow-y: auto;
-  float: left;
+  padding: 5px;
 }
 
 .comment-item {
@@ -12,6 +12,7 @@
   flex-direction: row;
   align-items: center;
   gap: 5px;
+  max-width: 100%;
 }
 .comment-user {
   display: flex;
@@ -31,6 +32,12 @@
   text-decoration: underline;
 }
 
+.comment-text {
+  margin-left: 5px;
+  overflow-wrap: break-word;
+  max-width: 50%;
+}
+
 .comment-profile {
   width: 30px;
   height: 30px;
@@ -39,4 +46,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+#comment-count {
+  margin-top: 7px;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.no-comments {
+  color: grey;
 }

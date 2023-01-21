@@ -19,7 +19,7 @@
   height: auto;
 }
 
-#pin-show-page-left {
+#pin-show-page-right {
   display: flex;
   flex-direction: column;
   margin-left: 30px;
@@ -27,13 +27,14 @@
   width: 90%;
 }
 
-#pin-show-page-left > * {
+#pin-show-page-right > * {
   padding: 10px;
 }
 
 #pin-show-page-pin-title {
   font-weight: bold;
   font-size: 36px;
+  margin-top: 50px;
 }
 
 #pin-show-page-pin-description {
@@ -46,15 +47,20 @@
   flex-direction: row;
   align-items: center;
   gap: 6px;
+  margin-top: -25px;
 }
 
-#pin-show-page-user > * {
+#pin-show-page-username {
+  font-size: 20px;
+}
+#pin-show-page-text {
   font-size: 16px;
 }
 
 #pin-show-page-user-img {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
   background-color: lavender;
   display: flex;
   justify-content: center;
@@ -62,12 +68,4 @@
   border-radius: 100%;
 }
 
-#comment-count {
-  margin-top: 7px;
-  font-weight: bold;
-  font-size: 20px;
-}
 
-.no-comments {
-  color: grey;
-}
