@@ -20,6 +20,7 @@ const addComment = (comment) => ({
 });
 
 export const createComment = (comment) => async (dispatch) => {
+  console.log(comment);
   const { pin_id, description } = comment;
   const response = await csrfFetch(`/api/comments/`, {
     method: "POST",
@@ -39,8 +40,9 @@ const commentsReducer = (state = {}, action) => {
     case RECEIVE_COMMMENTS:
       return { ...action.comments };
     case ADD_COMMENT:
-      newState[action.comment.id] = action.comment;
-      return newState;
+      // newState[action.comment.id] = action.comment;
+      // return newState;
+      return { ...action.comments };
     default:
       return state;
   }

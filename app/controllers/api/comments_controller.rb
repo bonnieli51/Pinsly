@@ -9,10 +9,10 @@ class Api::CommentsController < ApplicationController
         comment = Comment.new(comment_params)
         comment.user_id = current_user.id
         @comments = Comment.where(pin_id: params[:pin_id])
-        if @comment.save
+        if comment.save
             render :index
         else
-            render json: {errors: @index_comments_on_pin_id.errors.full_messages}, status: :unprocessable_entity
+            render json: {errors: comment.errors.full_messages}, status: :unprocessable_entity
         end
     end
 

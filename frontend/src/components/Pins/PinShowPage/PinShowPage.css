@@ -1,10 +1,12 @@
 #pin-show-page {
-  margin-top: 2%;
-  margin-left: 10%;
-  max-width: 80%;
-  width: auto;
+  margin-top: 10px;
+  /* margin-left: 10%; */
+  margin: auto;
+  max-width: 60%;
   height: auto;
-  max-height: 550px;
+  /* max-height: 550px; */
+  position: relative;
+  top: 100px;
   display: flex;
   border-radius: 32px;
   overflow: hidden;
@@ -13,6 +15,7 @@
 
 #pin-show-page img {
   min-width: 40%;
+  /* max-width: 100%; */
   height: auto;
 }
 
@@ -21,6 +24,7 @@
   flex-direction: column;
   margin-left: 30px;
   margin-top: 40px;
+  width: 90%;
 }
 
 #pin-show-page-left > * {
@@ -56,4 +60,14 @@
   justify-content: center;
   align-items: center;
   border-radius: 100%;
+}
+
+#comment-count {
+  margin-top: 7px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.no-comments {
+  color: grey;
 }

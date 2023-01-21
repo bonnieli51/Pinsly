@@ -1,0 +1,44 @@
+.new-comment {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+.new-commen-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-textarea {
+  border-radius: 10px;
+  height: 40px;
+  width: 200%;
+  font-size: 15px;
+  resize: none;
+}
+
+.add-comment-button {
+  color: white;
+  border-radius: 20px;
+  background-color: #e60023;
+  padding: 10px;
+  cursor: pointer;
+  border: 0px;
+}
+
+.add-comment-button:disabled {
+  border: 0px;
+  background-color: grey;
+  cursor: auto;
+}
+
+#currentuser-comment-img {
+  width: 32px;
+  height: 32px;
+  background-color: lavender;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+}

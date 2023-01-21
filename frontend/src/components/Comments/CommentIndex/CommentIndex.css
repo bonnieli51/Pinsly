@@ -1,0 +1,41 @@
+.comments-list {
+  max-width: 200%;
+  height: auto;
+  overflow-y: auto;
+  float: left;
+}
+
+.comment-item {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.comment-user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.comment-user:hover {
+  cursor: pointer;
+}
+
+.comment-username {
+  font-weight: bold;
+}
+
+.comment-username:hover {
+  text-decoration: underline;
+}
+
+.comment-profile {
+  width: 30px;
+  height: 30px;
+  background-color: gainsboro;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
