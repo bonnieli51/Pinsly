@@ -2,6 +2,7 @@ import csrfFetch from "./csrf";
 
 const RECEIVE_COMMMENTS = "RECEIVE_COMMENTS";
 const ADD_COMMENT = "ADD_COMMENT";
+const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 const receiveComments = (comments) => ({
   type: RECEIVE_COMMMENTS,
@@ -34,15 +35,28 @@ export const createComment = (comment) => async (dispatch) => {
   dispatch(addComment(data.comment));
 };
 
+const removeComment = (commentId) => ({
+  type: REMOVE_COMMENT,
+  commentId,
+});
+
+export const deleteComment = (commentId) => async (dispatch) => {
+  await csrfFetch(`api/comments/${commentId}`, {
+    method: "DELETE",
+  });
+  dispatch(removeComment(commentId));
+};
+
 const commentsReducer = (state = {}, action) => {
   const newState = { ...state };
   switch (action.type) {
     case RECEIVE_COMMMENTS:
       return { ...action.comments };
     case ADD_COMMENT:
-      // newState[action.comment.id] = action.comment;
-      // return newState;
       return { ...action.comments };
+    case REMOVE_COMMENT:
+      delete newState[action.commentId];
+      return newState;
     default:
       return state;
   }
