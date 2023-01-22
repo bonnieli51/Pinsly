@@ -26,9 +26,9 @@ class Api::BoardsController < ApplicationController
         @board = Board.find(params[:id])
         if @board && @board.user_id == current_user.id
             @board.destroy
-            # render json: {message: "Board deleted!"}
-        # else 
-        #     render json: {message: "Unauthorized"}, status: :unauthorized
+            render json: {message: "Board deleted!"}
+        else 
+            render json: {message: "Unauthorized"}, status: :unauthorized
         end
     end
 

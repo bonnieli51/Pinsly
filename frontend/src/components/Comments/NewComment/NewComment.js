@@ -7,13 +7,29 @@ function NewComment({ pinId }) {
   const dispatch = useDispatch();
   const [description, setDescription] = useState("");
   const currentUser = useSelector((state) => state.session.user);
+  const [errors, setErrors] = useState([]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const pin_id = pinId;
     setDescription("");
-    return dispatch(commentsActions.createComment({ pin_id, description }));
+    setErrors([]);
+    return dispatch(
+      commentsActions.createComment({ pin_id, description })
+    ).catch(async (res) => {
+      let data;
+      try {
+        data = await res.clone().json();
+      } catch {
+        data = await res.text();
+      }
+      if (data?.errors) setErrors(data.errors);
+      else if (data) setErrors([data]);
+      else setErrors([res.statusText]);
+    });
   };
+
+  console.log(errors);
 
   return (
     <div className="new-comment">
@@ -28,6 +44,7 @@ function NewComment({ pinId }) {
           onChange={(e) => setDescription(e.target.value)}
           required
         ></textarea>
+        <div className="comment-errors"> {errors[0]}</div>
         <button
           type="submit"
           className="add-comment-button"
