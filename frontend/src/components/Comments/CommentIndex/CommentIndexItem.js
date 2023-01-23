@@ -26,8 +26,12 @@ function CommentIndexItem({ comment }) {
       </div>
       <div className="comment-text">{comment.description}</div>
       {currentUserId === comment.userId && (
-        <button type="submit" onClick={handleDelete}>
-          X
+        <button
+          type="submit"
+          onClick={handleDelete}
+          className="delete-comment-button"
+        >
+          <i class="fa-solid fa-trash"></i>
         </button>
       )}
     </div>

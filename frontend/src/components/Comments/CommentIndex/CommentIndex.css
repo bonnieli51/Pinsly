@@ -58,3 +58,18 @@
 .no-comments {
   color: grey;
 }
+
+.delete-comment-button {
+  background-color: transparent;
+  border: 0px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  margin-left: 5px;
+}
+
+.delete-comment-button:hover {
+  background-color: rgb(177, 174, 174);
+  color: white;
+  cursor: pointer;
+}

@@ -40,7 +40,7 @@ const removeComment = (commentId) => ({
 });
 
 export const deleteComment = (commentId) => async (dispatch) => {
-  await csrfFetch(`/gapi/comments/${commentId}`, {
+  await csrfFetch(`/api/comments/${commentId}`, {
     method: "DELETE",
   });
   dispatch(removeComment(commentId));
