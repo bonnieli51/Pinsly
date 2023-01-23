@@ -21,7 +21,6 @@ const addComment = (comment) => ({
 });
 
 export const createComment = (comment) => async (dispatch) => {
-  console.log(comment);
   const { pin_id, description } = comment;
   const response = await csrfFetch(`/api/comments/`, {
     method: "POST",
@@ -41,7 +40,7 @@ const removeComment = (commentId) => ({
 });
 
 export const deleteComment = (commentId) => async (dispatch) => {
-  await csrfFetch(`api/comments/${commentId}`, {
+  await csrfFetch(`/api/comments/${commentId}`, {
     method: "DELETE",
   });
   dispatch(removeComment(commentId));

@@ -29,7 +29,6 @@ function NewComment({ pinId }) {
     });
   };
 
-  console.log(errors);
 
   return (
     <div className="new-comment">
