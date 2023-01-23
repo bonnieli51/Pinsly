@@ -24,7 +24,7 @@ function BoardIndexItem({ board }) {
   const firstThreePinsImg = firstThreePins.map((pin) =>
     pin.imageUrl ? pin.imageUrl : ""
   );
-  console.log(pins);
+
   useEffect(() => {
     // dispatch(pinsActions.fetchAllPins());
     dispatch(pinsActions.fetchAllBoardPins());

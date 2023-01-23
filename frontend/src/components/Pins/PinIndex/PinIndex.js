@@ -26,7 +26,6 @@ function PinIndex() {
   const pins = useSelector((state) =>
     state.pins ? Object.values(state.pins) : []
   );
-  console.log(pins);
 
   useEffect(() => {
     if (boardId) {

@@ -17,8 +17,11 @@ Rails.application.routes.draw do
       resources :board_pins, only: [:index]
       # pins create need to be nested bc the user can choose which board. cant use url params
     end
-    resources :pins, only:[:index, :show]
+    resources :pins, only:[:index, :show] do
+      resources :comments, only: [:index]
+    end
     resources :board_pins, only: [:index, :create, :destroy]
+    resources :comments, only: [:create, :destroy]
     
   end
   get '*path', to: "static_pages#frontend_index"
