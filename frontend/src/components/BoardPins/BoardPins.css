@@ -1,0 +1,58 @@
+.add-pin-form {
+  position: absolute;
+  right: 20px;
+}
+
+.save-pin-select {
+  /* background-color: transparent; */
+  border: none;
+  font-size: 18px;
+  background: transparent;
+  cursor: pointer;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.save-pin-select:focus {
+  outline: none;
+}
+
+.save-pin-select > option:hover {
+  background-color: grey;
+}
+
+.save-pin-submit {
+  background-color: #e60023;
+  border-radius: 24px;
+  font-size: 18px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  padding-left: 16px;
+  padding-right: 16px;
+  cursor: pointer;
+  border: 0px;
+  color: white;
+  margin-left: 20px;
+}
+
+.save-pin-submit:disabled {
+  background-color: rgb(177, 174, 174);
+}
+
+.save-pin-errors {
+  color: red;
+  position: absolute;
+  top: 95px;
+  right: 5px;
+}
+
+.save-pin-saved {
+  color: green;
+  position: absolute;
+  top: 95px;
+  right: 60px;
+}

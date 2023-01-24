@@ -18,7 +18,7 @@ class Api::BoardPinsController < ApplicationController
     def create
         board_pin = BoardPin.new(board_pins_params)
         if board_pin.save
-            render json: {message: "Pin Saved"}
+            render json: {message: "Saving Successful"}
         else
             render json: {errors: board_pin.errors.full_messages}, status: :unprocessable_entity
         end
@@ -26,8 +26,10 @@ class Api::BoardPinsController < ApplicationController
 
     def check 
         board_pin = BoardPin.find_by(board_id: params[:board_id], pin_id: params[:pin_id])
-        if !board_pin 
-            render json:{errors: "Pin Already Saved"}
+        if board_pin 
+            render json:{message: "found"}
+        else 
+            render json:{message: ""}
         end
 
     end

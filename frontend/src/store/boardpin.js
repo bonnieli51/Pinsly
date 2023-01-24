@@ -4,9 +4,9 @@ const ADD_BOARDPIN = "ADD_BOARDPIN";
 const REMOVE_BOARDPIN = "REMOVE_BOARDPIN";
 const RECEIVE_BOARDPIN = "RECEIVE_BOARDPIN";
 
-const addBoardPin = (boardpin) => ({
+const addBoardPin = (message) => ({
   type: ADD_BOARDPIN,
-  boardpin,
+  message,
 });
 
 export const createBoardPin = (boardpin) => async (dispatch) => {
@@ -20,7 +20,7 @@ export const createBoardPin = (boardpin) => async (dispatch) => {
     }),
   });
   const data = await response.json();
-  dispatch(addBoardPin(data.boardpin));
+  dispatch(addBoardPin(data.message));
 };
 
 const removeBoardPin = (boardPinId) => ({
@@ -35,13 +35,29 @@ export const deleteBoardPin = (boardId, pinId) => async (dispatch) => {
   dispatch(removeBoardPin(boardId, pinId));
 };
 
-const receiveBoardPin = (boardPin) => ({
+const receiveBoardPin = (message) => ({
   type: RECEIVE_BOARDPIN,
-  boardPin,
+  message,
 });
 
-export const fetchBoardPin = (boardId, pinId) => async (dispatch) => {
-  const response = await csrfFetch(`/api/board_pin/${boardId}/${pinId}`, {});
+export const checkBoardPin = (boardId, pinId) => async (dispatch) => {
+  const response = await csrfFetch(`/api/board_pin/${boardId}/${pinId}`);
   const data = await response.json();
-  dispatch(receiveBoardPin(data.boardPin));
+  dispatch(receiveBoardPin(data.message));
 };
+
+const boardPinsReducer = (state = {}, action) => {
+  const newState = { ...state };
+  switch (action.type) {
+    // case ADD_BOARDPIN:
+    //   newState["saved"] = action.message;
+    //   return newState;
+    case RECEIVE_BOARDPIN:
+      newState["message"] = action.message;
+      return newState;
+    default:
+      return state;
+  }
+};
+
+export default boardPinsReducer;
