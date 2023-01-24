@@ -22,7 +22,12 @@ Rails.application.routes.draw do
     end
     resources :board_pins, only: [:index, :create, :destroy]
     resources :comments, only: [:create, :destroy]
-    
+    get '/board_pin/:board_id/:pin_id', to: 'board_pins#check', as: 'check'
+    delete '/board_pin/:board_id/:pin_id', to: 'board_pins#destroy', as: 'destroy'
+
+
   end
+  
   get '*path', to: "static_pages#frontend_index"
+  
 end

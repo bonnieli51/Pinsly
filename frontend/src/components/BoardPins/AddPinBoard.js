@@ -2,18 +2,17 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import * as boardPinsActions from "../../store/boardpin";
 import * as boardsActions from "../../store/board";
+import "./BoardPins.css";
 
 function AddPinBoard({ pinId, currentUser }) {
   const dispatch = useDispatch();
   const boards = useSelector((state) => Object.values(state.boards));
   const [boardId, setBoardId] = useState("");
   const [errors, setErrors] = useState([]);
-
   console.log(errors);
-
   useEffect(() => {
     dispatch(boardsActions.fetchBoards(currentUser.id));
-  }, [pinId]);
+  }, [pinId, dispatch, currentUser.id]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

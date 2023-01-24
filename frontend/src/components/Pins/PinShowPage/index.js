@@ -15,7 +15,7 @@ function PinShowPage() {
 
   useEffect(() => {
     dispatch(pinsActions.fetchPin(pinId));
-  }, [dispatch]);
+  }, [dispatch, pinId]);
 
   if (!currentUser) {
     return <Redirect to="/"></Redirect>;

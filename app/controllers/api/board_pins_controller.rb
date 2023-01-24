@@ -24,8 +24,16 @@ class Api::BoardPinsController < ApplicationController
         end
     end
 
+    def check 
+        board_pin = BoardPin.find_by(board_id: params[:board_id], pin_id: params[:pin_id])
+        if !board_pin 
+            render json:{errors: "Pin Already Saved"}
+        end
+
+    end
+
     def destroy
-        @boardpin = BoardPin.find(params[:id])
+       @board_pin = BoardPin.find_by(board_id: params[:board_id], pin_id: params[:pin_id])
         if @boardpin && @boardpin.pin.user_id == current_user.id
             @boardpin.destroy
             render json: {message: "Pin deleted"}
