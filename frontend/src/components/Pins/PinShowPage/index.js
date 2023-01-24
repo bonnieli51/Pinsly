@@ -34,7 +34,7 @@ function PinShowPage() {
           <div id="pin-show-page-user-img">
             {pin.username ? pin.username[0] : ""}
           </div>
-          <div id="pin-show-page-username"> {pin.username}</div>
+          <div id="pin-show-page-username"> {pin.username && pin.username}</div>
         </div>
         <CommentIndex pinId={pinId} />
         <NewComment pinId={pinId} />
