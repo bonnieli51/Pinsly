@@ -31,12 +31,7 @@ class Api::PinsController < ApplicationController
 
     def destroy
         @pin = Pin.find(params[:id])
-        if @pin && @pin.user_id == current_user.id
-            @pin.destroy
-            render json: {message: "Pin deleted!"}
-        else 
-            render json: {message: "Unauthorized"}, status: :unauthorized
-        end
+       WAHHH
     end
 
     def update
