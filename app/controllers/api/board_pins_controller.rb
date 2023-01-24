@@ -25,7 +25,7 @@ class Api::BoardPinsController < ApplicationController
     end
 
     def destroy
-        @boardpin = BoardPin.find(params[:id)
+        @boardpin = BoardPin.find(params[:id])
         if @boardpin && @boardpin.pin.user_id == current_user.id
             @boardpin.destroy
             render json: {message: "Pin deleted"}

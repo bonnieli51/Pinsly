@@ -1,23 +1,23 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect, useHistory, useParams } from "react-router-dom";
+import { Redirect, useParams } from "react-router-dom";
 import * as pinsActions from "../../../store/pin";
+import AddPinBoard from "../../BoardPins/AddPinBoard";
 import CommentIndex from "../../Comments/CommentIndex/CommentIndex";
 import NewComment from "../../Comments/NewComment/NewComment";
 import "./PinShowPage.css";
 
 function PinShowPage() {
   const dispatch = useDispatch();
-  const history = useHistory();
   const { pinId } = useParams();
   const pin = useSelector(({ pins }) => (pins[pinId] ? pins[pinId] : {}));
-  const sessionUser = useSelector((state) => state.session.user);
+  const currentUser = useSelector((state) => state.session.user);
 
   useEffect(() => {
     dispatch(pinsActions.fetchPin(pinId));
   }, [dispatch]);
 
-  if (!sessionUser) {
+  if (!currentUser) {
     return <Redirect to="/"></Redirect>;
   }
 
@@ -26,6 +26,7 @@ function PinShowPage() {
       <img className="pin-image" src={pin.imageUrl}></img>
 
       <div id="pin-show-page-right">
+        <AddPinBoard pinId={pinId} currentUser={currentUser} />
         <div id="pin-show-page-pin-title">{pin.title}</div>
         <div id="pin-show-page-pin-description">{pin.description}</div>
         <div id="pin-show-page-user">
