@@ -20,10 +20,10 @@ Rails.application.routes.draw do
     resources :pins, only:[:index, :show] do
       resources :comments, only: [:index]
     end
-    resources :board_pins, only: [:index, :create, :destroy]
+    resources :board_pins, only: [:index, :create]
     resources :comments, only: [:create, :destroy]
     get '/board_pin/:board_id/:pin_id', to: 'board_pins#check', as: 'check'
-    delete '/board_pin/:board_id/:pin_id', to: 'board_pins#destroy', as: 'destroy'
+    delete '/board_pin/:board_id/:pin_id', to: 'board_pins#unsave', as: 'unsave'
 
 
   end

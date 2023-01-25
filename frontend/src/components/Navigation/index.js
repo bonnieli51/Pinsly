@@ -32,8 +32,8 @@ function Navigation() {
           </a>
         </div>
         <div id="navbar-right">
-          <i id="search-icon" class="fa-solid fa-magnifying-glass" />
-          <input id="search-bar" type="text" placeholder="Search" />
+          {/* <i id="search-icon" class="fa-solid fa-magnifying-glass" />
+          <input id="search-bar" type="text" placeholder="Search" /> */}
           <a href="https://github.com/bonnieli51/Pinsly">
             <button className="Right-Login-Navbar-buttons">
               <span class="tooltiptext">Bonnie's Github</span>

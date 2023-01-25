@@ -31,7 +31,7 @@ export const createComment = (comment) => async (dispatch) => {
     }),
   });
   const data = await response.json();
-  dispatch(addComment(data.comment));
+  dispatch(addComment(data));
 };
 
 const removeComment = (commentId) => ({
