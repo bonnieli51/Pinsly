@@ -10,9 +10,9 @@ function PinIndexItem({ pin }) {
   const userId = pin.userId;
   const user = useSelector(({ users }) => (users[userId] ? users[userId] : {}));
 
-  useEffect(() => {
-    dispatch(usersActions.fetchUser(userId));
-  }, [dispatch, pin]);
+  // useEffect(() => {
+  //   dispatch(usersActions.fetchUser(userId));
+  // }, [dispatch, pin]);
 
   const handleClick = () => {
     history.push(`/pins/${pin.id}`);

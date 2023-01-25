@@ -1,7 +1,6 @@
 import csrfFetch from "./csrf";
 
 const RECEIVE_COMMMENTS = "RECEIVE_COMMENTS";
-const ADD_COMMENT = "ADD_COMMENT";
 const REMOVE_COMMENT = "REMOVE_COMMENT";
 
 const receiveComments = (comments) => ({
@@ -15,10 +14,6 @@ export const fetchComments = (pinId) => async (dispatch) => {
   dispatch(receiveComments(data));
 };
 
-const addComment = (comment) => ({
-  type: ADD_COMMENT,
-  comment,
-});
 
 export const createComment = (comment) => async (dispatch) => {
   const { pin_id, description } = comment;
@@ -31,7 +26,7 @@ export const createComment = (comment) => async (dispatch) => {
     }),
   });
   const data = await response.json();
-  dispatch(addComment(data));
+  dispatch(receiveComments(data));
 };
 
 const removeComment = (commentId) => ({
@@ -50,8 +45,6 @@ const commentsReducer = (state = {}, action) => {
   const newState = { ...state };
   switch (action.type) {
     case RECEIVE_COMMMENTS:
-      return { ...action.comments };
-    case ADD_COMMENT:
       return { ...action.comments };
     case REMOVE_COMMENT:
       delete newState[action.commentId];
