@@ -1,5 +1,6 @@
 .comments-list {
-  max-width: 100%;
+  /* max-width: 100%; */
+  width: 40vw;
   max-height: 10vh;
   /* height: auto; */
   overflow-y: auto;

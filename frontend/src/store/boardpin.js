@@ -32,7 +32,7 @@ export const deleteBoardPin = (boardId, pinId) => async (dispatch) => {
   await csrfFetch(`/api/board_pin/${boardId}/${pinId}`, {
     method: "DELETE",
   });
-  dispatch(removeBoardPin(boardId, pinId));
+  dispatch(removeBoardPin());
 };
 
 const receiveBoardPin = (message) => ({

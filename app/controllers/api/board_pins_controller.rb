@@ -18,7 +18,7 @@ class Api::BoardPinsController < ApplicationController
     def create
         board_pin = BoardPin.new(board_pins_params)
         if board_pin.save
-            render json: {message: "Saving Successful"}
+            render json: {errors: "Saving Successful"}, status: 201
         else
             render json: {errors: board_pin.errors.full_messages}, status: :unprocessable_entity
         end
@@ -34,13 +34,13 @@ class Api::BoardPinsController < ApplicationController
 
     end
 
-    def destroy
-       @board_pin = BoardPin.find_by(board_id: params[:board_id], pin_id: params[:pin_id])
-        if @boardpin && @boardpin.pin.user_id == current_user.id
+    def unsave
+       @boardpin = BoardPin.find_by(board_id: params[:board_id], pin_id: params[:pin_id])
+        if @boardpin
             @boardpin.destroy
             render json: {message: "Pin deleted"}
         else 
-            render json: {message: "Unauthorized"}, status: :unauthorized
+            render json: {message: "failed"}, status: 422
         end
     end
 

@@ -38,20 +38,28 @@ function AddPinBoard({ pinId, currentUser }) {
     );
   };
 
-  const handleChange = () => {
+  const handleUnsave = (e) => {
+    e.preventDefault();
     const board_id = boardId;
+    console.log(pin_id, board_id);
+    dispatch(boardPinsActions.deleteBoardPin(board_id, pin_id));
+  };
+
+  const handleChange = (e) => {
+    setBoardId(e.target.value);
+    const board_id = e.target.value;
     setErrors([]);
     setSaved("");
-    // dispatch(boardPinsActions.checkBoardPin(board_id, pin_id));
+    dispatch(boardPinsActions.checkBoardPin(board_id, pin_id));
   };
 
   return (
     <>
-      <form className="add-pin-form" onSubmit={handleSubmit}>
+      <form className="add-pin-form">
         <select
           value={boardId}
           className="save-pin-select"
-          onChange={(e) => setBoardId(e.target.value) >> handleChange()}
+          onChange={(e) => handleChange(e)}
         >
           <option value="" selected>
             All Boards
@@ -60,9 +68,24 @@ function AddPinBoard({ pinId, currentUser }) {
             <option value={board.id}>{board.name}</option>
           ))}
         </select>
-        <button className="save-pin-submit" type="submit" disabled={!boardId}>
-          Save
-        </button>
+        {!message ? (
+          <button
+            className="save-pin-submit"
+            type="submit"
+            disabled={!boardId}
+            onClick={handleSubmit}
+          >
+            Save
+          </button>
+        ) : (
+          <button
+            className="save-pin-submit"
+            type="submit"
+            onClick={handleUnsave}
+          >
+            UnSave
+          </button>
+        )}
       </form>
       <div className="save-pin-errors">{errors[0] && errors[0].slice(5)}</div>
       <div className="save-pin-saved">{saved && saved}</div>
