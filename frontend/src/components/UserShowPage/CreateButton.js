@@ -38,9 +38,9 @@ function CreateButton() {
           >
             Board
           </div>
-          <NavLink className="NavLinkText" exact to="/pin/new">
+          {/* <NavLink className="link-create-pin" exact to="/pin/new">
             Pin
-          </NavLink>
+          </NavLink> */}
         </div>
       )}
     </>

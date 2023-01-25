@@ -42,7 +42,7 @@ function AddPinBoard({ pinId, currentUser }) {
     e.preventDefault();
     const board_id = boardId;
     dispatch(boardPinsActions.deleteBoardPin(board_id, pin_id));
-    setSaved("")
+    setSaved("");
   };
 
   const handleChange = (e) => {
@@ -82,6 +82,7 @@ function AddPinBoard({ pinId, currentUser }) {
             className="save-pin-submit"
             type="submit"
             onClick={handleUnsave}
+            disabled={!boardId}
           >
             UnSave
           </button>

@@ -10,7 +10,9 @@ import "./PinShowPage.css";
 function PinShowPage() {
   const dispatch = useDispatch();
   const { pinId } = useParams();
-  const pin = useSelector(({ pins }) => (pins[pinId] ? pins[pinId] : {}));
+  // const pin = useSelector(({ pins }) => (pins[pinId] ? pins[pinId] : {}));
+  const pin = useSelector(({ pins }) => pins);
+  console.log(pin);
   const currentUser = useSelector((state) => state.session.user);
 
   useEffect(() => {
