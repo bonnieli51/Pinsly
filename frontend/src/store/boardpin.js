@@ -20,7 +20,7 @@ export const createBoardPin = (boardpin) => async (dispatch) => {
     }),
   });
   const data = await response.json();
-  dispatch(addBoardPin(data.message));
+  dispatch(addBoardPin(data));
 };
 
 const removeBoardPin = (boardPinId) => ({
@@ -29,10 +29,11 @@ const removeBoardPin = (boardPinId) => ({
 });
 
 export const deleteBoardPin = (boardId, pinId) => async (dispatch) => {
-  await csrfFetch(`/api/board_pin/${boardId}/${pinId}`, {
+  const response = await csrfFetch(`/api/board_pin/${boardId}/${pinId}`, {
     method: "DELETE",
   });
-  dispatch(removeBoardPin());
+  const data = await response.json();
+  dispatch(removeBoardPin(data));
 };
 
 const receiveBoardPin = (message) => ({
@@ -49,10 +50,13 @@ export const checkBoardPin = (boardId, pinId) => async (dispatch) => {
 const boardPinsReducer = (state = {}, action) => {
   const newState = { ...state };
   switch (action.type) {
-    // case ADD_BOARDPIN:
-    //   newState["saved"] = action.message;
-    //   return newState;
+    case ADD_BOARDPIN:
+      newState["message"] = action.message;
+      return newState;
     case RECEIVE_BOARDPIN:
+      newState["message"] = action.message;
+      return newState;
+    case REMOVE_BOARDPIN:
       newState["message"] = action.message;
       return newState;
     default:

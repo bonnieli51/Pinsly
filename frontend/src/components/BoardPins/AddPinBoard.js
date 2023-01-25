@@ -41,8 +41,8 @@ function AddPinBoard({ pinId, currentUser }) {
   const handleUnsave = (e) => {
     e.preventDefault();
     const board_id = boardId;
-    console.log(pin_id, board_id);
     dispatch(boardPinsActions.deleteBoardPin(board_id, pin_id));
+    setSaved("")
   };
 
   const handleChange = (e) => {

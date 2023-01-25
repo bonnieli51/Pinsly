@@ -39,8 +39,6 @@ class Api::BoardPinsController < ApplicationController
         if @boardpin
             @boardpin.destroy
             render json: {message: "Pin deleted"}
-        else 
-            render json: {message: "failed"}, status: 422
         end
     end
 
