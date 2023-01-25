@@ -3,17 +3,22 @@
   overflow: hidden;
 }
 
+#splash_img_4 {
+  width: 100%;
+  overflow: hidden;
+}
+
 .back-to-top {
   border: 0px;
-  width: 3vw;
-  height: 3vw;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
   position: absolute;
   left: 48.5%;
-  top: 2255px;
-
+  top: 50px;
   background-color: rgb(156, 3, 67);
   color: white;
+  cursor: pointer;
 }
 
 #splash-links > * {
@@ -33,22 +38,23 @@
   align-items: center;
   background-color: white;
   position: absolute;
-  /* bottom: -283.6%; */
-  /* top: 2975.6px; */
-    top: 3010px;
-
+  bottom: 0px;
 }
 
 #splash-sign-up {
   border-radius: 32px;
   text-align: center;
-  width: 28vw;
-  height: 74vh;
+  width: 450px;
+  height: 600px;
   background-color: white;
   position: absolute;
-  bottom: -2120px;
-  right: 150px;
+  top: 13%;
+  right: 5%;
 }
-#splash_img_4{
-    filter: brightness(50%)
+#splash_img_4 {
+  filter: brightness(50%);
+}
+
+#last-img {
+  position: relative;
 }

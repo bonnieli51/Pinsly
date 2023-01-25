@@ -21,7 +21,7 @@
   border: 2px solid rgb(177, 174, 174);
   padding: 8px 16px;
   border-radius: 16px;
-  width: 25vw;
+  width: 24vw;
 
 }
 
@@ -34,7 +34,7 @@
   border: 0px;
   font-size: 16px;
   display: block;
-  margin-left: 90%;
+  margin-left: 22vw;
 }
 
 .add-comment-button:disabled {
