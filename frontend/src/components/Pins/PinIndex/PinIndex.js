@@ -39,9 +39,11 @@ function PinIndex() {
 
   const breakpointColumnsObj = {
     default: 6,
-    1100: 5,
-    700: 4,
-    500: 3,
+    1500: 4,
+    1200: 3,
+    1000: 2,
+    700: 1,
+
   };
 
   const items =

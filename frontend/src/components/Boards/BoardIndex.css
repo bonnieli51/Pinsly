@@ -6,6 +6,12 @@
   row-gap: 30px;
 }
 
+#boards {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 16em));
+}
+
 .board {
   width: 252px;
   height: 231px;
