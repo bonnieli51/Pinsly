@@ -26,8 +26,7 @@ function BoardIndexItem({ board }) {
   );
 
   useEffect(() => {
-    // dispatch(pinsActions.fetchAllPins());
-    dispatch(pinsActions.fetchAllBoardPins());
+    // dispatch(pinsActions.fetchAllBoardPins());
   }, [dispatch]);
 
   return (
