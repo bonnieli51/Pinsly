@@ -8,7 +8,6 @@ import "./BoardIndex.css"
 function BoardIndex() {
   const dispatch = useDispatch();
   const boards = useSelector((state) => Object.values(state.boards));
-  //   const { username } = useParams();
   const { userId } = useParams();
 
   useEffect(() => {

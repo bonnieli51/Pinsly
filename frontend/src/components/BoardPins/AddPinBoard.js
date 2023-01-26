@@ -84,7 +84,7 @@ function AddPinBoard({ pinId, currentUser }) {
             onClick={handleUnsave}
             disabled={!boardId}
           >
-            UnSave
+            Unsave
           </button>
         )}
       </form>

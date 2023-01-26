@@ -6,7 +6,7 @@
         json.set! "pin_images" do 
             board.pins.each do |pin|
                 json.child! do 
-                    json.pin_images url_for(pin.images[0])
+                    json.image_url url_for(pin.images[0])
                  end
             end
         end
