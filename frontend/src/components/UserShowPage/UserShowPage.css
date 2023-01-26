@@ -59,7 +59,9 @@
   border-radius: 100px;
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
+
 #bottom {
   padding: 30px;
 }
@@ -76,7 +78,7 @@
   border-radius: 10px;
 }
 
-#usershowpage-saved{
-    text-decoration: underline;
-    font-weight: bold;
+#usershowpage-saved {
+  text-decoration: underline;
+  font-weight: bold;
 }

@@ -20,7 +20,6 @@ function BoardShowPage() {
 
   useEffect(() => {
     dispatch(boardsActions.fetchBoard(boardId));
-    dispatch(usersActions.fetchUser(board.userId));
   }, [dispatch, boardId]);
 
   if (!sessionUser) {
@@ -34,7 +33,7 @@ function BoardShowPage() {
       </div>
       <div id="top-board-show-page">
         <div id="user-board-showpg">
-          {user.username ? user.username[0] : ""}
+          {board.username ? board.username[0] : ""}
         </div>
         <div id="board-description-showpg">{board.description}</div>
       </div>

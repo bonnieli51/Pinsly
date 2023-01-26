@@ -16,6 +16,7 @@
   border: 0px;
   color: grey;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .Right-Login-Navbar-buttons .tooltiptext {
@@ -248,4 +249,3 @@
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.129);
   z-index: 1;
 }
-
