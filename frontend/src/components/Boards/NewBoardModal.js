@@ -7,7 +7,6 @@ import "./NewBoardModal.css";
 
 function NewBoardForm(props) {
   const dispatch = useDispatch();
-  const { userId } = useParams();
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [errors, setErrors] = useState([]);

@@ -59,7 +59,9 @@
   border-radius: 100px;
   font-size: 20px;
   font-weight: bold;
+  cursor: pointer;
 }
+
 #bottom {
   padding: 30px;
 }
@@ -69,6 +71,7 @@
 
 .create-menu-buttons {
   font-size: 16px;
+  cursor: pointer;
 }
 
 .create-menu-buttons:hover {
@@ -76,7 +79,7 @@
   border-radius: 10px;
 }
 
-#usershowpage-saved{
-    text-decoration: underline;
-    font-weight: bold;
+#usershowpage-saved {
+  text-decoration: underline;
+  font-weight: bold;
 }

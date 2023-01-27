@@ -43,7 +43,6 @@ function PinIndex() {
     1200: 3,
     1000: 2,
     700: 1,
-
   };
 
   const items =
@@ -51,22 +50,22 @@ function PinIndex() {
     pins.map(function (pin) {
       return <PinIndexItem key={pin.id} pin={pin} />;
     });
+
   return (
     <>
-      {/* <div id="total-pins">{pins.length} pins</div> */}
-      {/* <div id="boardshowpg-pins">
-        {pins.map((pin) => (
-          <PinIndexItem key={pin.id} pin={pin} />
-        ))}
-      </div> */}
-      {/* {pins.map((pin) => ( */}
-      <Masonry
-        breakpointCols={breakpointColumnsObj}
-        className="masonry-grid"
-        columnClassName="masonry-grid_column"
-      >
-        {items}
-      </Masonry>
+      {items.length === 0 ? (
+        <div className="no-pins-yet">
+          There aren’t any Pins on this board yet
+        </div>
+      ) : (
+        <Masonry
+          breakpointCols={breakpointColumnsObj}
+          className="masonry-grid"
+          columnClassName="masonry-grid_column"
+        >
+          {items}
+        </Masonry>
+      )}
     </>
   );
 }
