@@ -71,6 +71,7 @@
 
 .create-menu-buttons {
   font-size: 16px;
+  cursor: pointer;
 }
 
 .create-menu-buttons:hover {

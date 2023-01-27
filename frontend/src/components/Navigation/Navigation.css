@@ -169,6 +169,7 @@
 #dropdown-personal-info {
   display: flex;
   gap: 10px;
+  cursor: pointer;
 }
 #dm-personal-info-initial {
   background-color: #e5e2e2;
@@ -237,6 +238,7 @@
   height: 25px;
   font-weight: bold;
   padding-left: 10px;
+  cursor: pointer;
 }
 #logout-button:hover {
   background-color: #e5e2e2;
