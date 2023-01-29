@@ -36,7 +36,7 @@ function ProfileButton({ user }) {
         onClick={openMenu}
       >
         <i class="fa-solid fa-chevron-down"></i>
-        <span class="tooltiptext">Account and more options</span>
+        <span class="tooltiptext" id="last">Account and more options</span>
       </button>
       {showMenu && (
         <ul className="dropdown-menu">
