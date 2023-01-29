@@ -28,9 +28,9 @@ function Navigation() {
           >
             About
           </a>
-          <a href="#" className="NavLinkText">
+          {/* <a href="#" className="NavLinkText">
             Create
-          </a>
+          </a> */}
         </div>
         <div id="navbar-right">
           {/* <i id="search-icon" class="fa-solid fa-magnifying-glass" />

@@ -43,9 +43,15 @@ function BoardIndexItem({ board }) {
     <Link to={`/users/${userId}/boards/${board.id}`} className="board">
       <div className="board-div">
         <div className="board-images">
-          <img id="boardimage1" src={PinImageURLs[0]}></img>
-          <img src={PinImageURLs[1]}></img>
-          <img src={PinImageURLs[2]}></img>
+          <div id="boardimage1">
+            <img src={PinImageURLs[0]}></img>
+          </div>
+          <div>
+            <img src={PinImageURLs[1]}></img>
+          </div>
+          <div>
+            <img src={PinImageURLs[2]}></img>
+          </div>
         </div>
         <div className="board-name">{board.name}</div>
         <div className="num-pins-board">{board.pinCount} pins</div>
