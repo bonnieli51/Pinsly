@@ -27,11 +27,14 @@
   text-align: center;
   padding: 5px 0;
   border-radius: 6px;
-
   position: fixed;
   display: inline;
   top: 70px;
   text-align: center;
+}
+
+#last {
+  right: 1vh;
 }
 
 .Right-Login-Navbar-buttons:hover .tooltiptext {

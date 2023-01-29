@@ -22,25 +22,29 @@ function Navigation() {
             Home
           </NavLink>
           <a
-            href="https://github.com/bonnieli51/Pinsly/blob/main/README.md"
+            href="https://github.com/bonnieli51/Pinsly/blob/main/README.md "
             className="NavLinkText"
+            target="_blank"
           >
             About
           </a>
-          <a href="#" className="NavLinkText">
+          {/* <a href="#" className="NavLinkText">
             Create
-          </a>
+          </a> */}
         </div>
         <div id="navbar-right">
           {/* <i id="search-icon" class="fa-solid fa-magnifying-glass" />
           <input id="search-bar" type="text" placeholder="Search" /> */}
-          <a href="https://github.com/bonnieli51/Pinsly">
+          <a href="https://github.com/bonnieli51/Pinsly" target="_blank">
             <button className="Right-Login-Navbar-buttons">
               <span class="tooltiptext">Bonnie's Github</span>
               <i class="fa-brands fa-github" />
             </button>
           </a>
-          <a href="https://www.linkedin.com/login">
+          <a
+            href="https://www.linkedin.com/in/bonnie-li-100464232/"
+            target="_blank"
+          >
             <button className="Right-Login-Navbar-buttons">
               <span class="tooltiptext">Bonnie's LinkedIn</span>
               <i class="fa-brands fa-linkedin"></i>
@@ -71,13 +75,25 @@ function Navigation() {
         </NavLink> */}
         <ul id="navbar-right">
           <li>
-            <a href="https://github.com/bonnieli51/Pinsly/blob/main/README.md">About</a>
+            <a
+              href="https://github.com/bonnieli51/Pinsly/blob/main/README.md"
+              target="_blank"
+            >
+              About
+            </a>
           </li>
           <li>
-            <a href="https://github.com/bonnieli51/Pinsly">GitHub</a>
+            <a href="https://github.com/bonnieli51/Pinsly" target="_blank">
+              GitHub
+            </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/login">LinkedIn</a>
+            <a
+              href="https://www.linkedin.com/in/bonnie-li-100464232/"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
           </li>
           <li>
             <LoginFormModal />

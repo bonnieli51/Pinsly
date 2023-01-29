@@ -37,11 +37,15 @@ function HomePage() {
               <i class="fa-solid fa-angle-up"></i>
             </button>
             <div id="splash-links">
-              <a href="https://github.com/bonnieli51/Pinsly/blob/main/README.md">
+              <a href="https://github.com/bonnieli51/Pinsly/blob/main/README.md" target="_blank">
                 About
               </a>
-              <a href="https://www.linkedin.com/login">LinkedIn</a>
-              <a href="https://github.com/bonnieli51/Pinsly">GitHub</a>
+              <a href="https://www.linkedin.com/in/bonnie-li-100464232/" target="_blank">
+                LinkedIn
+              </a>
+              <a href="https://github.com/bonnieli51/Pinsly" target="_blank">
+                GitHub
+              </a>
             </div>
           </div>
         </div>
