@@ -339,35 +339,4 @@ BoardPin.create!(pin_id: pin_1.id, board_id: board_6.id)
 BoardPin.create!(pin_id: pin_11.id, board_id: board_6.id)
 BoardPin.create!(pin_id: pin_18.id, board_id: board_6.id)
 
-
-# pin_18_1 = Pin.create!(
-#   title:"Bunny Tongue",
-#   description:"",
-#   user_id: demo_user.id,
-#   board_id: board_6.id)
-
-#   image_18 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/pinsly+images/bunny_2.jpeg")
-#   pin_18_1.images.attach(io: image_18, filename:"bunny_2.jpeg")
-#   pin_18_1.save!
-
-# pin_11_1 = Pin.create!(
-#   title:"Husky Puppy",
-#   description:"The tongue is sticking out!",
-#   user_id: user_1.id,
-#   board_id: board_6.id)
-
-#   image_11 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/pinsly+images/dog_1.jpeg")
-#   pin_11_1.images.attach(io: image_11, filename:"dog_1.jpeg")
-#   pin_11_1.save!
-
-# pin_1_1 = Pin.create!(
-#     title:"Cat",
-#     description:"Cat trying to touch its legs",
-#     user_id: demo_user.id,
-#     board_id: board_6.id )
-  
-#     image_1 = URI.open("https://pinsly-seeds.s3.amazonaws.com/pinsly+images/pinsly+images/cat.jpeg")
-#     pin_1_1.images.attach(io: image_1, filename:"cat.jpeg")
-#     pin_1_1.save!
-
 puts "Done!"

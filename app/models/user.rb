@@ -19,7 +19,6 @@ class User < ApplicationRecord
   validates :password, length: { in: 6..255, message: "Your password is too short! You need 6+ characters." }, allow_nil: true
 
   def self.find_by_credentials(credential, password)
-    # user = credential.match?(URI::MailTo::EMAIL_REGEXP) ? User.find_by(email: credential) : User.find_by(username: credential)
     user = User.find_by(email: credential)
     return nil if user.nil?
 
