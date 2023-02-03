@@ -3,8 +3,6 @@ class Api::PinsController < ApplicationController
     
    
     def index
-        # @pins = Pin.where(user_id: params[:user_id])
-        # render :index
         if params[:board_id]
             @pins = Pin.where(board_id: params[:board_id])
             render :index
